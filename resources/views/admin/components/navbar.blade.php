@@ -1,7 +1,8 @@
 <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
       <a class="navbar-brand text-warning" href="{{('/dashboard')}}"><i class="fa fa-wifi" aria-hidden="true"></i></a>
-      <a class="navbar-brand brand-logo mr-5" href="{{('/dashboard')}}">Amreta<span class="text-warning">Net</span><span class="text-danger text-xxl">.</span></a>
+      <a href="{{ url('/dashboard')}}" class="navbar-brand brand-logo mr-5"><img src="{{ asset('img/bg-core/stiker amreta net.png')}}" alt="" srcset=""></a>
+      {{-- <a class="navbar-brand brand-logo mr-5" href="{{('/dashboard')}}">Amreta<span class="text-warning">Net</span><span class="text-danger text-xxl">.</span></a> --}}
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
