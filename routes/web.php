@@ -31,3 +31,19 @@ Route::view('/home', 'landing.home');
 Route::view('/about', 'landing.about');
 Route::view('/service', 'landing.service');
 Route::view('/contact', 'landing.contact');
+
+// ========== Route For auth user ==============
+Route::get('login', 'App\Http\Controllers\AuthController@index')->name('login');
+// Route::get('register', 'App\Http\Controllers\AuthController@register')->name('register');
+Route::post('proses_login', 'App\Http\Controllers\AuthController@proses_login')->name('proses_login');
+Route::get('logout', 'App\Http\Controllers\AuthController@logout')->name('logout');
+
+// ========== Route For Middleware user ==============
+Route::group(['middleware' => ['auth']], function () {
+    Route::group(['middleware' => ['cek_login:admin']], function () {
+        Route::resource('admin', AdminController::class);
+    });
+    Route::group(['middleware' => ['cek_login:user']], function () {
+        Route::resource('landing', AdminController::class);
+    });
+});

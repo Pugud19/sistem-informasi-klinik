@@ -24,6 +24,9 @@
             <li class="nav-item">
               <a class="btn btn-primary ml-lg-2" href="#">Free Analytics</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('logout')}}">Logout</a>
+            </li>
           </ul>
         </div>
 
