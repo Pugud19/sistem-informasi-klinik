@@ -24,9 +24,16 @@
             <li class="nav-item">
               <a class="btn btn-primary ml-lg-2" href="#">Free Analytics</a>
             </li>
+            @auth
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('logout')}}">Logout</a>
             </li>
+            @else
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('login')}}">Login</a>
+            </li>
+            @endauth
+
           </ul>
         </div>
 

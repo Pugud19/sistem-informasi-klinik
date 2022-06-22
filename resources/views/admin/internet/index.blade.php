@@ -17,17 +17,17 @@
               </tr>
             </thead>
             <tbody>
-
+                @foreach ($internet as $i)
               <tr>
-                <td></td>
-                <td class="font-weight-bold"></td>
-                <td class="font-weight-medium"><div class="badge badge-success"></div></td>
-                <td class="font-weight-medium"><div class="badge badge-warning"></div></td>
+                <td>{{ $no++ }}</td>
+                <td class="font-weight-bold">{{ $i->paket }}</td>
+                <td class="font-weight-medium"><div class="badge badge-success">{{ $i->kecepatan }}</div></td>
+                <td class="font-weight-medium"><div class="badge badge-warning">{{ $i->lama_penggunaan }}</div></td>
                 <td class="font-weight-medium">
-
+                    {{ $i->harga }}
                 </td>
                 </tr>
-
+                @endforeach
             </tbody>
           </table>
         </div>

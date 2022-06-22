@@ -14,7 +14,11 @@ class InternetController extends Controller
      */
     public function index()
     {
-        //
+        // Tampil data from database internet
+        $internet = Internet::latest()->paginate(5);
+
+        return view('admin.internet.index', compact('internet'))
+        ->with('no', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -24,7 +28,8 @@ class InternetController extends Controller
      */
     public function create()
     {
-        //
+        // tambah input ke form
+        return view('admin.internet.create');
     }
 
     /**
@@ -35,7 +40,14 @@ class InternetController extends Controller
      */
     public function store(Request $request)
     {
-        //
+           // Proses input data gedung with foto
+           $request->validate([
+            'kode' => 'required|unique:gedung,kode|max:6',
+            'nama' => 'required|max:225',
+            'alamat' => 'required',
+            'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
     }
 
     /**

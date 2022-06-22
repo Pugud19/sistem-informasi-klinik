@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('internets', function (Blueprint $table) {
             $table->id();
+            $table->string('paket');
+            $table->string('kecepatan');
+            $table->string('lama_penggunaan');
+            $table->bigInteger('harga');
             $table->timestamps();
         });
     }

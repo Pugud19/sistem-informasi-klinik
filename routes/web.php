@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\InternetController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::view('/dashboard', 'admin.home');
 Route::view('/dashboard/home', 'admin.home');
 Route::view('/dashboard/pengguna', 'admin.pengguna.index');
-Route::view('/dashboard/internet', 'admin.internet.index');
+Route::resource('/dashboard/internet', InternetController::class);
 Route::view('/dashboard/pembayaran', 'admin.pembayaran.index');
 Route::view('/dashboard/todo', 'admin.todo.index');
 Route::view('/dashboard/masa-aktif', 'admin.masa-aktif.index');
@@ -40,6 +41,9 @@ Route::get('logout', 'App\Http\Controllers\AuthController@logout')->name('logout
 
 // ========== Route For Middleware user ==============
 Route::group(['middleware' => ['auth']], function () {
+    Route::middleware(['auth', 'isAdmin'])->group(function(){
+        Route::resource('admin', AdminController::class);
+    });
     Route::group(['middleware' => ['cek_login:admin']], function () {
         Route::resource('admin', AdminController::class);
     });
