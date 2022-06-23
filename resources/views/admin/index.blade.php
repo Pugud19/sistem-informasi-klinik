@@ -27,6 +27,7 @@
 
 </head>
 <body>
+    @include('sweetalert::alert')
   <div class="container-scroller">
     <!-- navbar start -->
      @include('admin/components/navbar')
@@ -76,6 +77,23 @@
   <!-- Custom js for this page-->
   <script src="{{ asset('admin/js/dashboard.js')}}"></script>
   <script src="{{ asset('admin/js/Chart.roundedBarCharts.js')}}"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script>
+    $('.delete-confirm').on('click', function (event) {
+    event.preventDefault();
+    const url = $(this).attr('href');
+    swal({
+        title: 'Apakah Kamu Yakin?',
+        text: 'Data ini akan dihapus secara permanen!',
+        icon: 'warning',
+        buttons: ["Tidak", "Ya!"],
+    }).then(function(value) {
+        if (value) {
+            window.location.href = url;
+        }
+    });
+});
+  </script>
   <!-- End custom js for this page-->
 </body>
 

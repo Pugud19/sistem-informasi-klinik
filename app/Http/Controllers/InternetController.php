@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Internet;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
 class InternetController extends Controller
 {
@@ -15,10 +16,11 @@ class InternetController extends Controller
     public function index()
     {
         // Tampil data from database internet
-        $internet = Internet::latest()->paginate(5);
+        // $internet = Internet::latest()->simplepaginate(5);
+        $internet = Internet::latest()->simplepaginate(10);;
+        // $internet = Internet::where('paket', '<', 5)->cursorPaginate(15);;
 
-        return view('admin.internet.index', compact('internet'))
-        ->with('no', (request()->input('page', 1) - 1) * 5);
+        return view('admin.internet.index', compact('internet'));
     }
 
     /**
@@ -40,14 +42,28 @@ class InternetController extends Controller
      */
     public function store(Request $request)
     {
-           // Proses input data gedung with foto
+           // Proses menyimpan data paket ke db
            $request->validate([
-            'kode' => 'required|unique:gedung,kode|max:6',
-            'nama' => 'required|max:225',
-            'alamat' => 'required',
-            'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'paket' => 'required|max:30',
+            'kecepatan' => 'required|max:30',
+            'lama_penggunaan' => 'required',
+            'harga' => 'required|numeric',
         ]);
 
+        $input = $request->all();
+
+        try {
+            Internet::create($input);
+
+            return redirect()->route('internet.index')
+                ->with('success', 'Created successfully!');
+        } catch (\Exception $e){
+            return redirect()->back()
+                ->with('error', 'Error during the creation!');
+        }
+
+
+        // return redirect()->route('internet.index')->with('success', 'Penambahan Data Berhasil');
     }
 
     /**
@@ -69,7 +85,9 @@ class InternetController extends Controller
      */
     public function edit(Internet $internet)
     {
-        //
+        // edit data
+        return view('admin.internet.edit', compact('internet'));
+
     }
 
     /**
@@ -81,7 +99,25 @@ class InternetController extends Controller
      */
     public function update(Request $request, Internet $internet)
     {
-        //
+        // proses update data to db
+        $request->validate([
+            'paket' => 'required|max:30',
+            'kecepatan' => 'required|max:30',
+            'lama_penggunaan' => 'required',
+            'harga' => 'required|numeric',
+        ]);
+
+        $input = $request->all();
+
+        try {
+            $internet->update($input);
+
+            return redirect()->route('internet.index')
+                ->with('success', 'Ubah data berhasill!');
+        } catch (\Exception $e){
+            return redirect()->back()
+                ->with('error', 'Error during the creation!');
+        }
     }
 
     /**
@@ -90,8 +126,12 @@ class InternetController extends Controller
      * @param  \App\Models\Internet  $internet
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Internet $internet)
+    public function destroy(Internet $internet, $id)
     {
-        //
+        // delete data paket
+        $internet::find($id);
+        $internet = Internet::where('id', $id)->delete();
+
+        return back()->with('success','Data Berhasil Dihapus');
     }
 }

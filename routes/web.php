@@ -22,6 +22,7 @@ Route::view('/dashboard', 'admin.home');
 Route::view('/dashboard/home', 'admin.home');
 Route::view('/dashboard/pengguna', 'admin.pengguna.index');
 Route::resource('/dashboard/internet', InternetController::class);
+Route::get('/internet-delete/{id}', 'App\Http\Controllers\InternetController@destroy');
 Route::view('/dashboard/pembayaran', 'admin.pembayaran.index');
 Route::view('/dashboard/todo', 'admin.todo.index');
 Route::view('/dashboard/masa-aktif', 'admin.masa-aktif.index');

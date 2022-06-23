@@ -1,7 +1,6 @@
-<?php 
-if (isset($user)) {
-  if ($role != 'Pengguna') {
-?>
+@extends('admin.index')
+
+@section('content')
 <div class="col-md-10 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
@@ -9,7 +8,20 @@ if (isset($user)) {
                   <p class="card-description text-center">
                     Form untuk data internet
                   </p>
-                  <form action="controllers/internetController.php" method="post">
+
+                  @if ($errors->any())
+                  <div class="alert alert-danger">
+                      <strong>Whoops!</strong> Ada sesuatu yang salah dengan data yang kamu input.<br><br>
+                      <ul>
+                          @foreach ($errors->all() as $error)
+                              <li>{{ $error }}</li>
+                          @endforeach
+                      </ul>
+                  </div>
+              @endif
+
+                  <form action="{{ route('internet.store')}}" method="POST">
+                    @csrf
                   <div class="form-group row">
                     <div class="col">
                       <label>Paket</label>
@@ -39,14 +51,10 @@ if (isset($user)) {
                     </div>
                   </div>
                   <div class="d-flex justify-content-center">
-                  <button type="submit" name="tombol" value="simpan" class="btn btn-primary mr-2">submit</button>
+                  <button type="submit" class="btn btn-primary mr-2">simpan</button>
                   </div>
                   </form>
                 </div>
               </div>
 </div>
-<?php }}
-else{
-  include_once 'accesDenied.php';
-}
- ?>
+@endsection
