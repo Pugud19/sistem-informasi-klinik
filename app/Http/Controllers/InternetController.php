@@ -56,7 +56,7 @@ class InternetController extends Controller
             Internet::create($input);
 
             return redirect()->route('internet.index')
-                ->with('success', 'Created successfully!');
+                ->with('success', 'Masukkan data berhasil!');
         } catch (\Exception $e){
             return redirect()->back()
                 ->with('error', 'Error during the creation!');

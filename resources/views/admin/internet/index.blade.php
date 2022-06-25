@@ -7,7 +7,7 @@
         <div class="d-flex justify-content-between">
         <p class="card-title mb-0">Daftar Paket Internet</p>
         <div>
-            <a href="{{ route('internet.create')}}" type="submit" class="btn btn-primary mr-2"><i class="fa fa-plus"></i> Tambah</a>
+            <a href="{{ route('internet.create')}}" class="btn btn-primary mr-2"><i class="fa fa-plus"></i> Tambah</a>
         </div>
         </div>
 
@@ -29,7 +29,7 @@
                 <td class="font-weight-medium"><div class="badge badge-success">{{ $i->lama_penggunaan }}</div></td>
                 <td class="font-weight-medium"><div class="badge badge-warning">{{ $i->kecepatan }}</div></td>
                 <td class="font-weight-medium">
-                    {{ $i->harga }}
+                    {{  number_format($i->harga) }}
                 </td>
                 <td>
                     <span class="d-flex justify-content-center">

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\InternetController;
+use App\Http\Controllers\PenggunaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 // ========== Route For Admin ==============
 Route::view('/dashboard', 'admin.home');
 Route::view('/dashboard/home', 'admin.home');
-Route::view('/dashboard/pengguna', 'admin.pengguna.index');
+Route::resource('/dashboard/pengguna', PenggunaController::class);
 Route::resource('/dashboard/internet', InternetController::class);
 Route::get('/internet-delete/{id}', 'App\Http\Controllers\InternetController@destroy');
 Route::view('/dashboard/pembayaran', 'admin.pembayaran.index');
