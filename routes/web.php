@@ -21,7 +21,9 @@ use Illuminate\Support\Facades\Route;
 // ========== Route For Admin ==============
 Route::view('/dashboard', 'admin.home');
 Route::view('/dashboard/home', 'admin.home');
+Route::view('/dashboard/masa-aktif/create', 'admin.masa-aktif.create');
 Route::resource('/dashboard/pengguna', PenggunaController::class);
+Route::get('/pengguna-delete/{id}', 'App\Http\Controllers\PenggunaController@destroy')->name("hapus");
 Route::resource('/dashboard/internet', InternetController::class);
 Route::get('/internet-delete/{id}', 'App\Http\Controllers\InternetController@destroy');
 Route::view('/dashboard/pembayaran', 'admin.pembayaran.index');

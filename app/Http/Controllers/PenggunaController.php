@@ -16,7 +16,7 @@ class PenggunaController extends Controller
     public function index()
     {
         // tampilkan data ke index dari db
-        $pengguna = Pengguna::all();
+        $pengguna = Pengguna::latest()->paginate(10);
 
         return view('admin.pengguna.index', compact('pengguna'))
         ->with('no', (request()->input('page', 1) - 1) * 5);
@@ -60,7 +60,7 @@ class PenggunaController extends Controller
                 ->with('success', 'Masukkan data pengguna berhasil!');
         } catch (\Exception $e){
             return redirect()->back()
-                ->with('error', 'Error during the creation!');
+                ->with('error', 'Maaf ada beberapa kesalahan!');
         }
     }
 
@@ -83,7 +83,9 @@ class PenggunaController extends Controller
      */
     public function edit(Pengguna $pengguna)
     {
-        //
+        // return view edit ke form
+        $user = User::all();
+        return view('admin.pengguna.edit', compact('user', 'pengguna'));
     }
 
     /**
@@ -95,7 +97,24 @@ class PenggunaController extends Controller
      */
     public function update(Request $request, Pengguna $pengguna)
     {
-        //
+        // edit form ke db
+        $request->validate([
+            'nama' => 'required|max:60',
+            'email' => 'required|email',
+            'nomor_hp' => 'required|numeric',
+        ]);
+
+        $input = $request->all();
+
+        try {
+              $pengguna->update($input);
+
+            return redirect()->route('pengguna.index')
+                ->with('success', 'Ubah data pengguna berhasil!');
+        } catch (\Exception $e){
+            return redirect()->back()
+                ->with('error', 'Maaf ada beberapa kesalahan!');
+        }
     }
 
     /**
@@ -104,8 +123,12 @@ class PenggunaController extends Controller
      * @param  \App\Models\Pengguna  $pengguna
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pengguna $pengguna)
+    public function destroy(Pengguna $pengguna, $id)
     {
-        //
+        // delete data Pengguna
+        $pengguna::find($id);
+        $pengguna = Pengguna::where('id', $id)->delete();
+
+        return back()->with('success','Data Berhasil Dihapus');
     }
 }

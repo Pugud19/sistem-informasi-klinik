@@ -6,20 +6,22 @@
       <div class="card-body">
         <h4 class="card-title text-center">Form Edit User</h4>
         <p class="card-description text-center">
-          Form Edit Paket <?= $data['fullname'] ?>
+          Form Edit Pengguna {{ $pengguna->nama }}
         </p>
-        <form action="controllers/memberController.php" method="post">
+        <form action="{{ route('pengguna.update', $pengguna->id)}}" method="POST">
+            @csrf
+            @method('PUT')
         <div class="form-group row">
           <div class="col">
-            <label>Fullname</label>
+            <label>Nama Pengguna</label>
             <div id="the-basics">
-              <input class="typeahead" type="text" name="fullname" value="<?= $data['fullname'] ?>">
+              <input class="typeahead" type="text" name="nama" value="{{ $pengguna->nama }}">
             </div>
           </div>
           <div class="col">
-            <label>username</label>
+            <label>Nomor HP</label>
             <div id="bloodhound">
-              <input class="typeahead" type="text" name="username" value="<?= $data['username'] ?>">
+              <input class="typeahead" type="text" name="nomor_hp" value="{{ $pengguna->nomor_hp }}">
             </div>
           </div>
         </div>
@@ -27,27 +29,12 @@
           <div class="col">
             <label>email</label>
             <div id="the-basics">
-              <input class="typeahead" type="email" name="email" value="<?= $data['email'] ?>">
-            </div>
-          </div>
-          <div class="col">
-            <label>Password</label>
-            <div id="bloodhound">
-              <input class="typeahead" type="password" name="password" value="<?= $data['password'] ?>">
-            </div>
-          </div>
-        </div>
-        <div class="form-group row">
-          <div class="col">
-            <label>Role</label>
-            <div id="the-basics">
-              <input class="typeahead" type="text" name="role" value="<?= $data['role'] ?>">
+              <input class="typeahead" type="email" name="email" value="{{ $pengguna->email }}">
             </div>
           </div>
         </div>
         <div class="d-flex justify-content-center">
-        <button type="submit" name="proses" value="ubah" class="btn btn-primary mr-2">submit</button>
-        <input type="hidden" name="ide" class="form-control mb-30" value="<?= $data['id'] ?>">
+        <button type="submit" class="btn btn-primary mr-2">submit</button>
         </div>
         </form>
       </div>

@@ -17,4 +17,8 @@ class Internet extends Model
         'lama_penggunaan',
         'harga',
     ];
+
+    public function masaAktif(){
+        return $this->hasMany(MasaAktif::class);
+    }
 }

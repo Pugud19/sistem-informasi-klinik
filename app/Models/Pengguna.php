@@ -9,6 +9,7 @@ class Pengguna extends Model
 {
     use HasFactory;
     protected $table = 'penggunas';
+    protected $guarded = 'id';
 
     protected $fillable = [
         'user_id',
@@ -19,5 +20,8 @@ class Pengguna extends Model
 
     public function user(){
         return $this->belongsTo(User::class);
+    }
+    public function masaAktif(){
+        return $this->hasOne(MasaAktif::class);
     }
 }

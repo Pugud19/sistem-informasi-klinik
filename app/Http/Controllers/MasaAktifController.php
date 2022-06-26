@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Internet;
 use App\Models\MasaAktif;
+use App\Models\Pengguna;
 use Illuminate\Http\Request;
 
 class MasaAktifController extends Controller
@@ -14,7 +16,11 @@ class MasaAktifController extends Controller
      */
     public function index()
     {
-        //
+        // menampilkan table data masa aktif ke view
+        $masaAktif = MasaAktif::latest()->paginate(10);
+
+        return view('admin.masa-aktif.index', compact('masaAktif'))
+        ->with('no', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -24,7 +30,12 @@ class MasaAktifController extends Controller
      */
     public function create()
     {
-        //
+        // return perintah ke form tambah
+        $pengguna = Pengguna::all();
+        $internet = Internet::all();
+
+        return view('admin.masa-aktif.create', compact('pengguna', 'internet'));
+
     }
 
     /**

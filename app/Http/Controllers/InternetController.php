@@ -56,10 +56,10 @@ class InternetController extends Controller
             Internet::create($input);
 
             return redirect()->route('internet.index')
-                ->with('success', 'Masukkan data berhasil!');
+                ->with('success', 'Masukkan data internet berhasil!');
         } catch (\Exception $e){
             return redirect()->back()
-                ->with('error', 'Error during the creation!');
+                ->with('error', 'Maaf ada beberapa kesalahan!');
         }
 
 
@@ -113,10 +113,10 @@ class InternetController extends Controller
             $internet->update($input);
 
             return redirect()->route('internet.index')
-                ->with('success', 'Ubah data berhasill!');
+                ->with('success', 'Ubah data internet berhasill!');
         } catch (\Exception $e){
             return redirect()->back()
-                ->with('error', 'Error during the creation!');
+                ->with('error', 'Maaf ada beberapa kesalahan!');
         }
     }
 

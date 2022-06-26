@@ -14,9 +14,23 @@ return new class extends Migration
     public function up()
     {
         Schema::create('masa_aktifs', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            // $table->unsignedBigInteger('pengguna_id');
+            // $table->unsignedBigInteger('internet_id');
+            // $table->string('nama');
+            // $table->date('awal_paket');
+            // $table->date('akhir_paket');
+            // $table->string('status');
             $table->timestamps();
+
+            // $table->foreign('pengguna_id')->references('id')->on('penggunas')->onDelete('cascade');
+            // $table->foreign('internet_id')->references('id')->on('internets')->onDelete('cascade');
         });
+
+        // Schema::table('masa_aktifs', function (Blueprint $table) {
+        //     $table->foreign('pengguna_id')->references('id')->on('penggunas')->onDelete('cascade');
+        //     $table->foreign('internet_id')->references('id')->on('internets')->onDelete('cascade');
+        // });
     }
 
     /**
