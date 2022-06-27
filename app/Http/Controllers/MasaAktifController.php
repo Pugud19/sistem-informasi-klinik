@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Internet;
 use App\Models\MasaAktif;
-use App\Models\Pengguna;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class MasaAktifController extends Controller
@@ -26,15 +26,16 @@ class MasaAktifController extends Controller
     /**
      * Show the form for creating a new resource.
      *
+
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
         // return perintah ke form tambah
-        $pengguna = Pengguna::all();
+        $user = User::all();
         $internet = Internet::all();
 
-        return view('admin.masa-aktif.create', compact('pengguna', 'internet'));
+        return view('admin.masa-aktif.create', compact('user', 'internet'));
 
     }
 
@@ -46,7 +47,31 @@ class MasaAktifController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // proses input data ke database
+        // masukan proses data form ke db
+        $request->validate([
+            'user_id' => 'required',
+            'internet_id' => 'required',
+            'nama' => 'required|max:60',
+            'awal_paket' => 'required|date',
+            'akhir_paket' => 'required|date',
+            'status' => 'required',
+        ]);
+
+        $input = $request->all();
+
+        // MasaAktif::create($input);
+
+        try {
+            MasaAktif::create($input);
+
+            return redirect()->route('data.index')
+                ->with('success', 'Masukkan data masa aktif berhasil!');
+        } catch (\Exception $e){
+            return redirect()->back()
+                ->with('error', 'Maaf ada beberapa kesalahan!');
+        }
+
     }
 
     /**

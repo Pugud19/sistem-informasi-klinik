@@ -8,18 +8,22 @@ use Illuminate\Database\Eloquent\Model;
 class MasaAktif extends Model
 {
     use HasFactory;
-    protected $table = 'penggunas';
+    protected $table = 'masa_aktifs';
+
+    // protected $guarded = 'id';
+    // protected $status_way = ['aktif', 'tidak_aktif'];
 
     protected $fillable =[
-        'pengguna_id',
+        'user_id',
+        'internet_id',
         'nama',
-        'nama_paket',
         'awal_paket',
         'akhir_paket',
         'status',
     ];
-    public function pengguna(){
-        return $this->belongsTo(pengguna::class);
+
+    public function user(){
+        return $this->hasMany(User::class);
     }
     public function internet(){
         return $this->belongsTo(Internet::class);

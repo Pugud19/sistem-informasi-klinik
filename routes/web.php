@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\InternetController;
+use App\Http\Controllers\MasaAktifController;
 use App\Http\Controllers\PenggunaController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,7 +22,9 @@ use Illuminate\Support\Facades\Route;
 // ========== Route For Admin ==============
 Route::view('/dashboard', 'admin.home');
 Route::view('/dashboard/home', 'admin.home');
-Route::view('/dashboard/masa-aktif/create', 'admin.masa-aktif.create');
+// Route::get('/dashboard/masa-aktif', [MasaAktifController::class, 'index'])->name('index');
+// Route::get('/dashboard/masa-aktif', [MasaAktifController::class, 'create'])->name('create');
+Route::resource('/dashboard/data', MasaAktifController::class);
 Route::resource('/dashboard/pengguna', PenggunaController::class);
 Route::get('/pengguna-delete/{id}', 'App\Http\Controllers\PenggunaController@destroy')->name("hapus");
 Route::resource('/dashboard/internet', InternetController::class);

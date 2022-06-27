@@ -6,7 +6,7 @@
       <div class="card-body">
         <h4 class="card-title text-center">Form Tambah Pengguna</h4>
         <p class="card-description text-center">
-          Form Create Pengguna Internet
+          Form Create masa aktif pengguna
         </p>
         @if ($errors->any())
         <div class="alert alert-danger">
@@ -19,23 +19,22 @@
         </div>
     @endif
 
-        <form action="{{ route('masaAktif.store')}}" method="post">
+        <form action="{{ route('data.store')}}" method="POST">
             @csrf
         <div class="form-group row">
           <div class="col">
-            <label>pengguna_id</label>
+            <label>pengguna</label>
             <div id="the-basics">
-                <select name="pengguna_id" class="form-control">
+                <select name="user_id" class="form-control">
                     <option>== pilih pengguna ==</option>
-                    @foreach ($pengguna as $p)
-                    <option value="{{ $p->id }}">{{ $p->name }}</option>
+                    @foreach ($user as $u)
+                    <option value="{{ $u->id }}">{{ $u->name }}</option>
                     @endforeach
                   </select>
-
             </div>
           </div>
           <div class="col">
-            <label>internet_id</label>
+            <label>internet</label>
             <div id="bloodhound">
               <select name="internet_id" class="form-control">
                 <option>== pilih internet  ==</option>
@@ -50,13 +49,13 @@
           <div class="col">
             <label>Nama</label>
             <div id="the-basics">
-              <input class="typeahead" type="text" name="nama" value="{{ $pengguna->nama }}">
+              <input class="typeahead" type="text" name="nama" placeholder="Masukkan nama pengguna">
             </div>
           </div>
           <div class="col">
             <label>Awal Paket</label>
             <div id="bloodhound">
-                <input class="typeahead" type="date" name="awal_paket" placeholder="Tanggal jadwal">
+                <input class="typeahead" type="date" name="awal_paket" >
             </div>
           </div>
         </div>
@@ -64,22 +63,18 @@
             <div class="col">
                 <label>Akhir Paket</label>
                 <div id="bloodhound">
-                    <input class="typeahead" type="date" name="akhir_paket" placeholder="Tanggal jadwal">
+                    <input class="typeahead" type="date" name="akhir_paket" >
                 </div>
             </div>
             <div class="col">
                 <label>Status</label>
                 <div id="bloodhound">
-                  <select name="status" class="form-control">
-                    <option>== pilih internet  ==</option>
-                    <option value="aktif">Aktif</option>
-                    <option value="tidak">Tidak Aktif</option>
-                  </select>
+                    <input class="typeahead" type="text" name="status" >
                 </div>
               </div>
         </div>
         <div class="d-flex justify-content-center">
-        <button type="submit" name="proses" class="btn btn-primary mr-2">submit</button>
+        <button type="submit"  class="btn btn-primary mr-2">submit</button>
         </div>
         </form>
       </div>

@@ -47,4 +47,7 @@ class User extends Authenticatable
     public function pengguna(){
         return $this->hasOne(Pengguna::class);
     }
+    public function masaAktif(){
+        return $this->belongsTo(MasaAktif::class);
+    }
 }

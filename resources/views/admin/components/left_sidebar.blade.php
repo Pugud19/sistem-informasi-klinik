@@ -25,7 +25,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('/dashboard/masa-aktif')}}">
+            <a class="nav-link" href="{{ url('/dashboard/data')}}">
             <i class="fa fa-ravelry menu-icon" aria-hidden="true"></i>
               <span class="menu-title">Masa Aktif</span>
             </a>
