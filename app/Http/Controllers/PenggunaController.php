@@ -51,22 +51,26 @@ class PenggunaController extends Controller
             'nama' => 'required|max:60',
             'tempat' => 'required|max:60',
             'tagihan' => 'required|max:60',
-            'status_tagihan' => 'required|max:60',
+            'status_tagihan' => 'required',
             'keterangan' => 'required|max:60',
             'nomor_hp' => 'nullable',
         ]);
 
         $input = $request->all();
 
-        try {
-            Pengguna::create($input);
+        Pengguna::create($input);
 
-            return redirect()->route('pengguna.index')
-                ->with('success', 'Masukkan data pengguna berhasil!');
-        } catch (\Exception $e){
-            return redirect()->back()
-                ->with('error', 'Maaf ada beberapa kesalahan!');
-        }
+            return redirect()->route('pengguna.index');
+
+        // try {
+        //     Pengguna::create($input);
+
+        //     return redirect()->route('pengguna.index')
+        //         ->with('success', 'Masukkan data pengguna berhasil!');
+        // } catch (\Exception $e){
+        //     return redirect()->back()
+        //         ->with('error', 'Maaf ada beberapa kesalahan!');
+        // }
     }
 
     /**

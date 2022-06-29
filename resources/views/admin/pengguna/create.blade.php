@@ -60,7 +60,12 @@
           <div class="col">
             <label>Status Tagihan</label>
             <div id="the-basics">
-              <input class="typeahead" type="text" name="status_tagihan">
+              {{-- <input class="typeahead" type="text" name="status_tagihan"> --}}
+              <select name="status_tagihan" class="form-control">
+                <option>== pilih Status Tagihan ==</option>
+                <option value="1">1</option>
+                <option value="0">0</option>
+              </select>
             </div>
           </div>
           <div class="col">

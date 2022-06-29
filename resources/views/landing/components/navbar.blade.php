@@ -24,15 +24,23 @@
             <li class="nav-item">
               <a class="btn btn-primary ml-lg-2" href="#">Free Analytics</a>
             </li>
-            @auth
+            {{-- <li class="nav-item">
+                <a class="nav-link" href="{{ __('logout')}}">Logout</a>
+            </li> --}}
+            @guest
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('logout')}}">Logout</a>
+                <a class="nav-link" href="{{ __('login')}}">Login</a>
             </li>
             @else
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url('login')}}">Login</a>
+            <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">{{ __('Logout')}}</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
             </li>
-            @endauth
+            @endguest
+
 
           </ul>
         </div>

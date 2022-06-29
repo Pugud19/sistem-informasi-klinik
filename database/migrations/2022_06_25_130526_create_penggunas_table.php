@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('tempat');
             $table->string('tagihan');
             $table->string('status_tagihan');
-            $table->bigInteger('nomor_hp');
-            $table->bigInteger('keterangan');
+            $table->bigInteger('nomor_hp')->nullable(true);
+            $table->string('keterangan');
             $table->timestamps();
 
             // $table->foreign('internet_id')->references('id')->on('internets')

@@ -13,10 +13,13 @@ class Pengguna extends Model
     protected $guarded = 'id';
 
     protected $fillable = [
-        'internet_id',
+        'paket',
         'nama',
-        'email',
+        'tempat',
+        'tagihan',
+        'status_tagihan',
         'nomor_hp',
+        'keterangan',
     ];
 
     // public function internet(){
