@@ -21,4 +21,7 @@ class Internet extends Model
     public function masaAktif(){
         return $this->hasMany(MasaAktif::class);
     }
+    public function pengguna(){
+        return $this->hasMany(Pengguna::class);
+    }
 }

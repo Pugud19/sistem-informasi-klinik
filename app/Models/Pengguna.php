@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Ramsey\Uuid\Type\Integer;
 
 class Pengguna extends Model
 {
@@ -12,15 +13,15 @@ class Pengguna extends Model
     protected $guarded = 'id';
 
     protected $fillable = [
-        'user_id',
+        'internet_id',
         'nama',
         'email',
         'nomor_hp',
     ];
 
-    public function user(){
-        return $this->belongsTo(User::class);
-    }
+    // public function internet(){
+    //     return $this->belongsTo(Internet::class);
+    // }
     public function masaAktif(){
         return $this->hasOne(MasaAktif::class);
     }

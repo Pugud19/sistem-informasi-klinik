@@ -23,28 +23,44 @@
             @csrf
         <div class="form-group row">
           <div class="col">
-            <label>nama</label>
+            <label>Nama</label>
             <div id="the-basics">
               <input class="typeahead" type="text" name="nama">
             </div>
           </div>
           <div class="col">
-            <label>user_id</label>
+            <label>Paket</label>
             <div id="bloodhound">
-              <select name="user_id" class="form-control">
+              {{-- <select name="user_id" class="form-control">
                 <option>== pilih user id ==</option>
                 @foreach ($user as $u)
                 <option value="{{ $u->id }}">{{ $u->name }}</option>
                 @endforeach
-              </select>
+              </select> --}}
+              <input class="typeahead" type="text" name="paket">
+
             </div>
           </div>
         </div>
         <div class="form-group row">
+            <div class="col">
+              <label>Tempat</label>
+              <div id="the-basics">
+                <input class="typeahead" type="text" name="tempat">
+              </div>
+            </div>
+            <div class="col">
+              <label>Tagihan</label>
+              <div id="bloodhound">
+                <input class="typeahead" type="text" name="tagihan">
+              </div>
+            </div>
+          </div>
+        <div class="form-group row">
           <div class="col">
-            <label>email</label>
+            <label>Status Tagihan</label>
             <div id="the-basics">
-              <input class="typeahead" type="email" name="email">
+              <input class="typeahead" type="text" name="status_tagihan">
             </div>
           </div>
           <div class="col">
@@ -54,6 +70,14 @@
             </div>
           </div>
         </div>
+        <div class="form-group row">
+            <div class="col">
+              <label>Keterangan</label>
+              <div id="the-basics">
+                <input class="typeahead" type="text" name="keterangan">
+              </div>
+            </div>
+          </div>
         <div class="d-flex justify-content-center">
         <button type="submit" name="proses" class="btn btn-primary mr-2">submit</button>
         </div>

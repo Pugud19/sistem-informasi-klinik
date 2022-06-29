@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Internet;
 use App\Models\Pengguna;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -30,9 +31,10 @@ class PenggunaController extends Controller
     public function create()
     {
         // create data ke db
-        $user = User::all();
+        // $internet = Internet::all();
 
-        return view('admin.pengguna.create', compact('user'));
+        // return view('admin.pengguna.create', compact('internet'));
+        return view('admin.pengguna.create');
     }
 
     /**
@@ -45,10 +47,13 @@ class PenggunaController extends Controller
     {
         // masukan proses data form ke db
         $request->validate([
-            'user_id' => 'required',
+            'paket' => 'required',
             'nama' => 'required|max:60',
-            'email' => 'required|email',
-            'nomor_hp' => 'required|numeric',
+            'tempat' => 'required|max:60',
+            'tagihan' => 'required|max:60',
+            'status_tagihan' => 'required|max:60',
+            'keterangan' => 'required|max:60',
+            'nomor_hp' => 'nullable',
         ]);
 
         $input = $request->all();

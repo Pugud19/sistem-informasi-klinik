@@ -15,14 +15,17 @@ return new class extends Migration
     {
         Schema::create('penggunas', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id', false, true);
+            $table->string('paket');
             $table->string('nama');
-            $table->string('email');
+            $table->string('tempat');
+            $table->string('tagihan');
+            $table->string('status_tagihan');
             $table->bigInteger('nomor_hp');
+            $table->bigInteger('keterangan');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users')
-            ->onDelete('cascade');
+            // $table->foreign('internet_id')->references('id')->on('internets')
+            // ->onDelete('cascade');
         });
     }
 

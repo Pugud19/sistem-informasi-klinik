@@ -17,10 +17,13 @@
                   <thead>
                     <tr>
                       <th>id</th>
-                      <th>user_id</th>
+                      <th>paket</th>
                       <th>nama</th>
-                      <th>Email</th>
-                      <th>Nomor HP</th>
+                      <th>tempat</th>
+                      <th>tagihan</th>
+                      <th>status tagihan</th>
+                      <th>nomor hp</th>
+                      <th>keterangan</th>
                       <th>Aksi</th>
                     </tr>
                   </thead>
@@ -28,10 +31,13 @@
                     @foreach ($pengguna as $p)
                     <tr>
                       <td>{{ ++$no }}</td>
-                      <td>{{ $p->user_id }}</td>
+                      <td>{{ $p->paket }}</td>
                       <td>{{ $p->nama }}</td>
-                      <td>{{ $p->email }}</td>
+                      <td>{{ $p->tempat }}</td>
+                      <td>{{ number_format($p->tagihan) }}</td>
+                      <td>{{ $p->status_tagihan }}</td>
                       <td>{{ $p->nomor_hp }}</td>
+                      <td>{{ $p->keterangan }}</td>
                       <td>
                         <span class="d-flex justify-content-center">
                             <a href="{{ route('pengguna.edit', $p->id)}}" class="btn btn-sm btn-warning mx-1" title="Ubah data"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
