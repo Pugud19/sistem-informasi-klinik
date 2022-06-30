@@ -21,21 +21,24 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 // ========== Route For Admin ==============
-Route::view('/dashboard', 'admin.home');
-Route::view('/dashboard/home', 'admin.home');
-// Route::get('/dashboard/masa-aktif', [MasaAktifController::class, 'index'])->name('index');
-// Route::get('/dashboard/masa-aktif', [MasaAktifController::class, 'create'])->name('create');
-Route::resource('/dashboard/data', MasaAktifController::class)->middleware('auth');
-Route::resource('/dashboard/pengguna', PenggunaController::class)->middleware('auth');
-Route::get('/pengguna-delete/{id}', 'App\Http\Controllers\PenggunaController@destroy')->name("hapus")->middleware('auth');
-Route::resource('/dashboard/internet', InternetController::class)->middleware('auth');
-Route::get('/internet-delete/{id}', 'App\Http\Controllers\InternetController@destroy')->middleware('auth');
-Route::view('/dashboard/pembayaran', 'admin.pembayaran.index')->middleware('auth');
-Route::view('/dashboard/todo', 'admin.todo.index')->middleware('auth');
-Route::view('/dashboard/masa-aktif', 'admin.masa-aktif.index')->middleware('auth');
+Route::middleware(['access'])->group (function() {
+    Route::view('/dashboard', 'admin.home')->name('dashboard');
+    Route::view('/dashboard/home', 'admin.home');
+    // Route::get('/dashboard/masa-aktif', [MasaAktifController::class, 'index'])->name('index');
+    // Route::get('/dashboard/masa-aktif', [MasaAktifController::class, 'create'])->name('create');
+    Route::resource('/dashboard/data', MasaAktifController::class);
+    Route::resource('/dashboard/pengguna', PenggunaController::class);
+    Route::get('/pengguna-delete/{id}', 'App\Http\Controllers\PenggunaController@destroy')->name("hapus");
+    Route::resource('/dashboard/internet', InternetController::class);
+    Route::get('/internet-delete/{id}', 'App\Http\Controllers\InternetController@destroy');
+    Route::view('/dashboard/pembayaran', 'admin.pembayaran.index');
+    Route::view('/dashboard/todo', 'admin.todo.index');
+    Route::view('/dashboard/masa-aktif', 'admin.masa-aktif.index');
+
+});
 
 // ========== Route For landing ==============
-Route::view('/', 'landing.home')->middleware('auth');
+Route::view('/', 'landing.home');
 Route::view('/home', 'landing.home');
 Route::view('/about', 'landing.about');
 Route::view('/service', 'landing.service');

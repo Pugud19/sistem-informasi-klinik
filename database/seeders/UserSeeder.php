@@ -18,19 +18,12 @@ class UserSeeder extends Seeder
         // sampel data for akun user
         $user = [
             [
-                'username' => 'admin',
-               'name'=>'ini akun Admin',
+               'name'=>'Super Admin',
                'email'=>'admin@example.com',
                 'role'=>'admin',
+                'isactive'=>'1',
                'password'=> bcrypt('admin123'),
-            ],
-            [
-                'username' => 'user',
-               'name'=>'ini akun User (non admin)',
-               'email'=>'user@example.com',
-                'role'=>'user',
-               'password'=> bcrypt('user123'),
-            ],
+            ]
         ];
         foreach ($user as $key => $value) {
             User::create($value);

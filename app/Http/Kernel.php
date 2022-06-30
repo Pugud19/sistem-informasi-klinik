@@ -66,5 +66,7 @@ class Kernel extends HttpKernel
         // route middleware untuk cek login
         // 'cek_login' => \App\Http\Middleware\Cek_login::class, // baru
         // 'isAdmin' => \App\Http\Middleware\AdminMiddleware::class,
+        'access' => \App\Http\Middleware\Access::class,
+
     ];
 }

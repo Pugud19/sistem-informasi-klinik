@@ -1,13 +1,12 @@
 @extends('admin.index')
 
 @section('content')
-
 <div class="main-panel content-wrapper">
     <div class="row">
       <div class="col-md-12 grid-margin">
         <div class="row">
           <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-            <h3 class="font-weight-bold">Selamat Datang di DesaNet.</h3>
+            <h3 class="font-weight-bold">Selamat Datang di AmretaNet.</h3>
             <h6 class="font-weight-normal mb-0">All systems are running smoothly! You can choose <a href="index.php?hal=data_paket" class="text-primary">a lot of internet package</a></h6>
           </div>
           <div class="col-12 col-xl-4">

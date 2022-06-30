@@ -32,6 +32,10 @@
                 <a class="nav-link" href="{{ __('login')}}">Login</a>
             </li>
             @else
+            @if(Auth::user()->role == 'admin')
+            <li class="nav-item">
+                <a class="nav-link" href="{{ __('dashboard')}}">{{ __('Dashboard')}}</a>
+            </li>
             <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">{{ __('Logout')}}</a>
@@ -39,8 +43,16 @@
                         @csrf
                     </form>
             </li>
+            @else
+            <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">{{ __('Logout')}}</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+            </li>
+            @endif
             @endguest
-
 
           </ul>
         </div>
