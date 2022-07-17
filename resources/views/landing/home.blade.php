@@ -182,8 +182,10 @@
 
       </div>
     </div> <!-- .container -->
-    {{-- contact section --}}
-   <div class="page-section" id="contact">
+  </div> <!-- .page-section -->
+
+      {{-- contact section --}}
+    <div class="page-section" id="contact">
         <div class="container">
             <div class="text-center wow fadeInUp">
                 <div class="subhead">Contact Kami</div>
@@ -263,6 +265,4 @@
         </div>
    </div>
     {{-- end contact section --}}
-  </div> <!-- .page-section -->
-
 @endsection
