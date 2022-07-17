@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="{{ asset('landing/vendor/animate/animate.css')}}">
 
   <link rel="stylesheet" href="{{ asset('landing/css/theme.css')}}">
+  <link rel="stylesheet" href="{{ asset('admin/plugins/icon/css/font-awesome.min.css')}}">
 
 </head>
 <body>
@@ -40,6 +41,15 @@
 <script src="{{ asset('landing/vendor/wow/wow.min.js')}}"></script>
 
 <script src="{{ asset('landing/js/theme.js')}}"></script>
+<script>
+  $(".scrollTo").on('click', function(e) {
+     e.preventDefault();
+     var target = $(this).attr('href');
+     $('html, body').animate({
+       scrollTop: ($(target).offset().top)
+     }, 2000);
+  });
+</script>
 
 </body>
 </html>

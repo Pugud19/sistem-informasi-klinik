@@ -13,6 +13,13 @@ class InternetController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function ambil(){
+        $internet = Internet::latest()->simplepaginate(3);;
+        // $internet = Internet::where('paket', '<', 5)->cursorPaginate(15);;
+
+        return view('landing.home', compact('internet'));
+    }
+
     public function index()
     {
         // Tampil data from database internet

@@ -20,6 +20,7 @@
                       <th>paket</th>
                       <th>nama</th>
                       <th>tempat</th>
+                      <th>router</th>
                       <th>tagihan</th>
                       <th>status tagihan</th>
                       <th>nomor hp</th>
@@ -34,6 +35,7 @@
                       <td>{{ $p->paket }}</td>
                       <td>{{ $p->nama }}</td>
                       <td>{{ $p->tempat }}</td>
+                      <td>{{ $p->router }}</td>
                       <td>{{ number_format($p->tagihan) }}</td>
                       <td>{{ $p->status_tagihan }}</td>
                       <td>{{ $p->nomor_hp }}</td>

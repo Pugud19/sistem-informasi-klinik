@@ -1,7 +1,7 @@
 @extends('landing.index')
 
 @section('content')
-<div class="page-section">
+  <div class="page-section">
     <div class="container">
       <div class="row text-center align-items-center">
         <div class="col-lg-4 py-3">
@@ -70,7 +70,7 @@
           </form>
         </div>
         <div class="col-lg-6 px-0">
-          <div class="maps-container"><div id="google-maps"></div></div>
+          <div class="maps-container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2643.3603797982364!2d107.76382419206385!3d-6.942415141021439!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68c5c55b11c079%3A0xf5c5e20565dd4e9d!2sAMRETA%20REPAIR%20(%20Service%20Hp%20jatinangor)!5e0!3m2!1sid!2sid!4v1658042165430!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
         </div>
       </div>
     </div>

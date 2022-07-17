@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('nama');
             $table->string('tempat');
             $table->string('tagihan');
+            $table->string('router');
             $table->string('status_tagihan');
             $table->bigInteger('nomor_hp')->nullable(true);
             $table->string('keterangan');
