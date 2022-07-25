@@ -49,6 +49,7 @@ class PenggunaController extends Controller
         $request->validate([
             'paket' => 'required',
             'nama' => 'required|max:60',
+            'router' => 'required|max:60',
             'tempat' => 'required|max:60',
             'tagihan' => 'required|max:60',
             'status_tagihan' => 'required',

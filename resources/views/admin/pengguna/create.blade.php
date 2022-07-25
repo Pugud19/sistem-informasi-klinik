@@ -43,6 +43,14 @@
           </div>
         </div>
         <div class="form-group row">
+        <div class="col">
+            <label>router</label>
+            <div id="the-basics">
+              <input class="typeahead" type="text" name="router">
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
             <div class="col">
               <label>Tempat</label>
               <div id="the-basics">

@@ -15,6 +15,7 @@ class Pengguna extends Model
     protected $fillable = [
         'paket',
         'nama',
+        'router',
         'tempat',
         'tagihan',
         'status_tagihan',
