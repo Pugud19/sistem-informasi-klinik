@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Gaji;
+use App\Models\User;
+
 use Illuminate\Http\Request;
 
-class GajiController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +15,11 @@ class GajiController extends Controller
      */
     public function index()
     {
-        // tampilkan data ke index dari db
-        $gaji = Gaji::all();
+                // tampilkan data ke index dari db
+        $users = User::all();
         // dd($users);
 
-        return view('admin.karyawan.index', compact('gaji'))
+        return view('admin.users.index', compact('users'))
         ->with('no', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -46,10 +47,10 @@ class GajiController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Gaji  $gaji
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Gaji $gaji)
+    public function show($id)
     {
         //
     }
@@ -57,10 +58,10 @@ class GajiController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Gaji  $gaji
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Gaji $gaji)
+    public function edit($id)
     {
         //
     }
@@ -69,10 +70,10 @@ class GajiController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Gaji  $gaji
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Gaji $gaji)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -80,10 +81,10 @@ class GajiController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Gaji  $gaji
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Gaji $gaji)
+    public function destroy($id)
     {
         //
     }

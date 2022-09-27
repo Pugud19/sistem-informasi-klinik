@@ -16,15 +16,17 @@
                 <table class="table display expandable-table" style="width:100%">
                   <thead>
                     <tr>
-                      <th>id</th>
-                      <th>paket</th>
-                      <th>nama</th>
-                      <th>tempat</th>
-                      <th>router</th>
-                      <th>tagihan</th>
-                      <th>status tagihan</th>
-                      <th>nomor hp</th>
-                      <th>keterangan</th>
+                      <th>No</th>
+                      <th>Costumer Id</th>
+                      <th>Paket</th>
+                      <th>Nama</th>
+                      <th>Tempat</th>
+                      <th>Router</th>
+                      <th>Teknisi</th>
+                      <th>Tagihan</th>
+                      <th>Status tagihan</th>
+                      <th>Nomor hp</th>
+                      <th>Keterangan</th>
                       <th>Aksi</th>
                     </tr>
                   </thead>

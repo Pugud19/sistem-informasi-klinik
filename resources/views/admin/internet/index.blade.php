@@ -16,8 +16,8 @@
             <thead>
               <tr>
                 <th>Paket</th>
-                <th>Kecepatan</th>
                 <th>Lama Penggunaan</th>
+                <th>Kecepatan</th>
                 <th>Harga</th>
                 <th>Aksi</th>
               </tr>

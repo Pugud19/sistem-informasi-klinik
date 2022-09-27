@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\GajiController;
 use App\Http\Controllers\InternetController;
 use App\Http\Controllers\MasaAktifController;
 use App\Http\Controllers\PenggunaController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -34,6 +36,8 @@ Route::middleware(['access'])->group (function() {
     Route::view('/dashboard/pembayaran', 'admin.pembayaran.index');
     Route::view('/dashboard/todo', 'admin.todo.index');
     Route::view('/dashboard/masa-aktif', 'admin.masa-aktif.index');
+    Route::resource('/dashboard/karyawan', GajiController::class);
+    Route::resource('/dashboard/users', UserController::class);
 
 });
 
