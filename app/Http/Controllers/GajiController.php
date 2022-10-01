@@ -30,6 +30,7 @@ class GajiController extends Controller
     public function create()
     {
         //
+        return view('admin.karyawan.create');
     }
 
     /**
@@ -41,6 +42,26 @@ class GajiController extends Controller
     public function store(Request $request)
     {
         //
+        // masukan proses data form ke db
+        $request->validate([
+            'pemasangan' => 'required|numeric',
+            'gaji_pokok' => 'required|numeric',
+            'nama' => 'required|max:60',
+            'gaji_kehadiran' => 'required|numeric',
+        ]);
+
+        $input = $request->all();
+
+        try {
+            Gaji::create($input);
+
+            return redirect()->route('karyawan.index')
+                ->with('success', 'Masukkan data Gaji berhasil!');
+        } catch (\Exception $e){
+            return redirect()->back()
+                ->with('error', 'Maaf ada beberapa kesalahan!');
+        }
+
     }
 
     /**

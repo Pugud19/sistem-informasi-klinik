@@ -47,9 +47,11 @@ class PenggunaController extends Controller
     {
         // masukan proses data form ke db
         $request->validate([
+            'costumer_id' => 'required|numeric',
             'paket' => 'required',
             'nama' => 'required|max:60',
             'router' => 'required|max:60',
+            'teknisi' => 'required|max:60',
             'tempat' => 'required|max:60',
             'tagihan' => 'required|max:60',
             'status_tagihan' => 'required',
@@ -59,19 +61,19 @@ class PenggunaController extends Controller
 
         $input = $request->all();
 
-        Pengguna::create($input);
+        // Pengguna::create($input);
 
-            return redirect()->route('pengguna.index');
+            // return redirect()->route('pengguna.index');
 
-        // try {
-        //     Pengguna::create($input);
+        try {
+            Pengguna::create($input);
 
-        //     return redirect()->route('pengguna.index')
-        //         ->with('success', 'Masukkan data pengguna berhasil!');
-        // } catch (\Exception $e){
-        //     return redirect()->back()
-        //         ->with('error', 'Maaf ada beberapa kesalahan!');
-        // }
+            return redirect()->route('pengguna.index')
+                ->with('success', 'Masukkan data pengguna berhasil!');
+        } catch (\Exception $e){
+            return redirect()->back()
+                ->with('error', 'Maaf ada beberapa kesalahan!');
+        }
     }
 
     /**
@@ -109,9 +111,16 @@ class PenggunaController extends Controller
     {
         // edit form ke db
         $request->validate([
+            'costumer_id' => 'required|numeric',
+            'paket' => 'required',
             'nama' => 'required|max:60',
-            'email' => 'required|email',
-            'nomor_hp' => 'required|numeric',
+            'router' => 'required|max:60',
+            'teknisi' => 'required|max:60',
+            'tempat' => 'required|max:60',
+            'tagihan' => 'required|max:60',
+            'status_tagihan' => 'required',
+            'keterangan' => 'required|max:60',
+            'nomor_hp' => 'nullable',
         ]);
 
         $input = $request->all();

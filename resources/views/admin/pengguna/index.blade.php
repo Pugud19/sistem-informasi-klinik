@@ -34,10 +34,12 @@
                     @foreach ($pengguna as $p)
                     <tr>
                       <td>{{ ++$no }}</td>
+                      <td>{{ $p->costumer_id }}</td>
                       <td>{{ $p->paket }}</td>
                       <td>{{ $p->nama }}</td>
                       <td>{{ $p->tempat }}</td>
                       <td>{{ $p->router }}</td>
+                      <td>{{ $p->teknisi }}</td>
                       <td>{{ number_format($p->tagihan) }}</td>
                       <td>{{ $p->status_tagihan }}</td>
                       <td>{{ $p->nomor_hp }}</td>

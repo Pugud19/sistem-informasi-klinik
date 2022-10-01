@@ -11,4 +11,11 @@ class Gaji extends Model
 
     protected $table = 'gajis';
     protected $guarded = 'id';
+
+    protected $fillable = [
+        'nama',
+        'pemasangan',
+        'gaji_pokok',
+        'gaji_kehadiran'
+    ];
 }

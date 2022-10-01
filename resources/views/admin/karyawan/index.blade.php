@@ -30,8 +30,8 @@
                       <td>{{ ++$no }}</td>
                       <td>{{ $g->nama }}</td>
                       <td>{{ $g->pemasangan }}</td>
-                      <td>{{ $g->gaji_pokok }}</td>
-                      <td>{{ $g->gaji_kehadiran }}</td>
+                      <td>{{ number_format($g->gaji_pokok) }}</td>
+                      <td>{{ number_format($g->gaji_kehadiran) }}</td>
                       <td>
                         <span class="d-flex justify-content-center">
                             <a href="{{ route('karyawan.edit', $g->id)}}" class="btn btn-sm btn-warning mx-1" title="Ubah data"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>

@@ -15,11 +15,13 @@ return new class extends Migration
     {
         Schema::create('penggunas', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('costumer_id');
             $table->string('paket');
             $table->string('nama');
             $table->string('tempat');
-            $table->string('tagihan');
+            $table->bigInteger('tagihan');
             $table->string('router');
+            $table->string('teknisi');
             $table->string('status_tagihan');
             $table->bigInteger('nomor_hp')->nullable(true);
             $table->string('keterangan');

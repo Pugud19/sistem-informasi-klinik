@@ -61,9 +61,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
         //
+        return view('admin.users.edit', compact('user'));
     }
 
     /**
@@ -73,9 +74,26 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
         //
+        // proses update data to db
+        $request->validate([
+            'role' => 'required',
+            'isactive' => 'required|numeric'
+        ]);
+
+        $input = $request->all();
+
+        try {
+            $user->update($input);
+
+            return redirect()->route('users.index')
+                ->with('success', 'Ubah data user berhasill!');
+        } catch (\Exception $e){
+            return redirect()->back()
+                ->with('error', 'Maaf ada beberapa kesalahan!');
+        }
     }
 
     /**

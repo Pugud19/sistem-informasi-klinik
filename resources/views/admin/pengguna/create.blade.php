@@ -43,6 +43,20 @@
           </div>
         </div>
         <div class="form-group row">
+            <div class="col">
+              <label>Costumer id</label>
+              <div id="bloodhound">
+                <input class="typeahead" type="text" name="costumer_id">
+              </div>
+            </div>
+            <div class="col">
+              <label>Teknisi</label>
+              <div id="bloodhound">
+                <input class="typeahead" type="text" name="teknisi">
+              </div>
+            </div>
+        </div>
+        <div class="form-group row">
         <div class="col">
             <label>router</label>
             <div id="the-basics">
@@ -90,7 +104,7 @@
                 <input class="typeahead" type="text" name="keterangan">
               </div>
             </div>
-          </div>
+        </div>
         <div class="d-flex justify-content-center">
         <button type="submit" name="proses" class="btn btn-primary mr-2">submit</button>
         </div>

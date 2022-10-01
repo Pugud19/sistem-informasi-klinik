@@ -13,6 +13,8 @@ class Pengguna extends Model
     protected $guarded = 'id';
 
     protected $fillable = [
+        'costumer_id',
+        'teknisi',
         'paket',
         'nama',
         'router',
