@@ -37,6 +37,7 @@ Route::middleware(['access'])->group (function() {
     Route::view('/dashboard/todo', 'admin.todo.index');
     Route::view('/dashboard/masa-aktif', 'admin.masa-aktif.index');
     Route::resource('/dashboard/karyawan', GajiController::class);
+    Route::get('/karyawan-delete/{id}', 'App\Http\Controllers\GajiController@destroy');
     Route::resource('/dashboard/users', UserController::class);
 
 });

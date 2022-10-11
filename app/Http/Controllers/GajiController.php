@@ -83,7 +83,10 @@ class GajiController extends Controller
      */
     public function edit(Gaji $gaji)
     {
-        //
+        // return view data ke form
+        $karyawan = Gaji::all();
+        return view('admin.karyawan.edit', compact('karyawan'));
+
     }
 
     /**
@@ -96,6 +99,24 @@ class GajiController extends Controller
     public function update(Request $request, Gaji $gaji)
     {
         //
+        $request->validate([
+            'pemasangan' => 'required|numeric',
+            'gaji_pokok' => 'required|numeric',
+            'nama' => 'required|max:60',
+            'gaji_kehadiran' => 'required|numeric',
+        ]);
+
+        $input = $request->all();
+
+        try {
+              $gaji->update($input);
+
+            return redirect()->route('karyawan.index')
+                ->with('success', 'Ubah data gaji karyawan berhasil!');
+        } catch (\Exception $e){
+            return redirect()->back()
+                ->with('error', 'Maaf ada beberapa kesalahan!');
+        }
     }
 
     /**
@@ -104,8 +125,12 @@ class GajiController extends Controller
      * @param  \App\Models\Gaji  $gaji
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Gaji $gaji)
+    public function destroy(Gaji $gaji, $id)
     {
-        //
+        // hapus data gaji
+        $gaji::find($id);
+        $gaji = Gaji::where('id', $id)->delete();
+
+        return back()->with('success','Data Berhasil Dihapus');
     }
 }

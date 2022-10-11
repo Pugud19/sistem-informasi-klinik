@@ -16,6 +16,6 @@ class Gaji extends Model
         'nama',
         'pemasangan',
         'gaji_pokok',
-        'gaji_kehadiran'
+        'gaji_kehadiran',
     ];
 }

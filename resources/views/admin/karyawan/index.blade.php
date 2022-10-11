@@ -35,7 +35,7 @@
                       <td>
                         <span class="d-flex justify-content-center">
                             <a href="{{ route('karyawan.edit', $g->id)}}" class="btn btn-sm btn-warning mx-1" title="Ubah data"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
-                            <a href="/pengguna-delete/{{$g->id}}" class="btn btn-sm btn-danger delete-confirm" title="Hapus data"><i class="fa fa-trash" aria-hidden="true"></i> Hapus</a>
+                            <a href="/karyawan-delete/{{$g->id}}" class="btn btn-sm btn-danger delete-confirm" title="Hapus data"><i class="fa fa-trash" aria-hidden="true"></i> Hapus</a>
                         </span>
                       </td>
                           </tr>

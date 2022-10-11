@@ -75,8 +75,11 @@
                     {{-- <input class="typeahead" type="text" name="status_tagihan"> --}}
                     <select name="status_tagihan" class="form-control">
                       <option>{{ $pengguna->status_tagihan }}</option>
+                      @if($pengguna->status_tagihan == 0) 
                       <option value="1">1</option>
+                      @elseif($pengguna->status_tagihan == 1) 
                       <option value="0">0</option>
+                      @endif
                     </select>
                   </div>
                 </div>
