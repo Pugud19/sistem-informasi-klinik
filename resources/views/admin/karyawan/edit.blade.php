@@ -9,7 +9,7 @@
           Form edit Gaji Karyawan
         </p>
 
-        <form action="{{ route('karyawan.update',$karyawan->id )}}" method="POST">
+        <form action="{{ route('gaji.update',$gaji->id )}}" method="POST">
             @csrf
             @method('PUT')
         <div class="form-group row">

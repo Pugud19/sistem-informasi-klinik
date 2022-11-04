@@ -55,7 +55,7 @@ class GajiController extends Controller
         try {
             Gaji::create($input);
 
-            return redirect()->route('karyawan.index')
+            return redirect()->route('gaji.index')
                 ->with('success', 'Masukkan data Gaji berhasil!');
         } catch (\Exception $e){
             return redirect()->back()
@@ -85,7 +85,7 @@ class GajiController extends Controller
     {
         // return view data ke form
         $karyawan = Gaji::all();
-        return view('admin.karyawan.edit', compact('karyawan'));
+        return view('admin.karyawan.edit', compact('gaji'));
 
     }
 
@@ -111,7 +111,7 @@ class GajiController extends Controller
         try {
               $gaji->update($input);
 
-            return redirect()->route('karyawan.index')
+            return redirect()->route('gaji.index')
                 ->with('success', 'Ubah data gaji karyawan berhasil!');
         } catch (\Exception $e){
             return redirect()->back()

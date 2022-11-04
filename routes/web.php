@@ -28,16 +28,16 @@ Route::middleware(['access'])->group (function() {
     Route::view('/dashboard/home', 'admin.home');
     // Route::get('/dashboard/masa-aktif', [MasaAktifController::class, 'index'])->name('index');
     // Route::get('/dashboard/masa-aktif', [MasaAktifController::class, 'create'])->name('create');
-    Route::resource('/dashboard/data', MasaAktifController::class);
+    // Route::resource('/dashboard/data', MasaAktifController::class);
     Route::resource('/dashboard/pengguna', PenggunaController::class);
     Route::get('/pengguna-delete/{id}', 'App\Http\Controllers\PenggunaController@destroy')->name("hapus");
     Route::resource('/dashboard/internet', InternetController::class);
     Route::get('/internet-delete/{id}', 'App\Http\Controllers\InternetController@destroy');
     Route::view('/dashboard/pembayaran', 'admin.pembayaran.index');
     Route::view('/dashboard/todo', 'admin.todo.index');
-    Route::view('/dashboard/masa-aktif', 'admin.masa-aktif.index');
-    Route::resource('/dashboard/karyawan', GajiController::class);
-    Route::get('/karyawan-delete/{id}', 'App\Http\Controllers\GajiController@destroy');
+    // Route::view('/dashboard/masa-aktif', 'admin.masa-aktif.index');
+    Route::resource('/dashboard/gaji', GajiController::class);
+    Route::get('/gaji-delete/{id}', 'App\Http\Controllers\GajiController@destroy');
     Route::resource('/dashboard/users', UserController::class);
 
 });
@@ -50,6 +50,12 @@ Route::get('/home', [InternetController::class, 'ambil'])->name('ambil');
 // Route::get('/home', 'InternetController@ambil');
 Route::view('/about', 'landing.about');
 Route::view('/service', 'landing.service');
+
+Route::view('/payment', 'payment.payment');
+Route::view('/payment-form', 'payment.paymentForm');
+
+
+
 
 // ========== Route For auth user ==============
 

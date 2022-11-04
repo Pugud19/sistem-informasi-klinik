@@ -19,7 +19,7 @@
         </div>
     @endif
 
-        <form action="{{ route('karyawan.store')}}" method="post">
+        <form action="{{ route('gaji.store')}}" method="post">
             @csrf
         <div class="form-group row">
           <div class="col">

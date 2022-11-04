@@ -8,7 +8,7 @@
             <div class="d-flex justify-content-between">
                 <p class="card-title">Data Karyawan</p>
                 <div>
-                    <a href="{{ route('karyawan.create')}}"  class="btn btn-primary mr-2 mb-3"><i class="fa fa-plus"></i> Tambah</a>
+                    <a href="{{ route('gaji.create')}}"  class="btn btn-primary mr-2 mb-3"><i class="fa fa-plus"></i> Tambah</a>
                 </div>
             </div>
             <div class="col-md-12 col-lg-12">
@@ -34,8 +34,8 @@
                       <td>{{ number_format($g->gaji_kehadiran) }}</td>
                       <td>
                         <span class="d-flex justify-content-center">
-                            <a href="{{ route('karyawan.edit', $g->id)}}" class="btn btn-sm btn-warning mx-1" title="Ubah data"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
-                            <a href="/karyawan-delete/{{$g->id}}" class="btn btn-sm btn-danger delete-confirm" title="Hapus data"><i class="fa fa-trash" aria-hidden="true"></i> Hapus</a>
+                            <a href="{{ route('gaji.edit', $g->id)}}" class="btn btn-sm btn-warning mx-1" title="Ubah data"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
+                            <a href="/gaji-delete/{{$g->id}}" class="btn btn-sm btn-danger delete-confirm" title="Hapus data"><i class="fa fa-trash" aria-hidden="true"></i> Hapus</a>
                         </span>
                       </td>
                           </tr>
