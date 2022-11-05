@@ -148,7 +148,10 @@
     </div> <!-- .container -->
   </div> <!-- .page-section -->
 
-  <div class="page-section" id="paket">
+@if($internet->isEmpty())
+<div></div>
+@else
+<div class="page-section" id="paket">
     <div class="container">
       <div class="text-center wow fadeInUp">
         <div class="subhead">Paket Internet</div>
@@ -178,11 +181,10 @@
           </div>
         </div>
         @endforeach
-
-
       </div>
     </div> <!-- .container -->
-  </div> <!-- .page-section -->
+</div>
+@endif <!-- .page-section -->
 
       {{-- contact section --}}
     <div class="page-section" id="contact">

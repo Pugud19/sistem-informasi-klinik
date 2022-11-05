@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Todo extends Model
 {
     use HasFactory;
+    protected $table = 'todos';
+    protected $guarded = ['id'];
+
+    protected $fillabe = [
+        'nama_pekerjaan',
+        'tanggal',
+    ];
 }

@@ -4,6 +4,7 @@ use App\Http\Controllers\GajiController;
 use App\Http\Controllers\InternetController;
 use App\Http\Controllers\MasaAktifController;
 use App\Http\Controllers\PenggunaController;
+use App\Http\Controllers\TodoController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -34,7 +35,7 @@ Route::middleware(['access'])->group (function() {
     Route::resource('/dashboard/internet', InternetController::class);
     Route::get('/internet-delete/{id}', 'App\Http\Controllers\InternetController@destroy');
     Route::view('/dashboard/pembayaran', 'admin.pembayaran.index');
-    Route::view('/dashboard/todo', 'admin.todo.index');
+    Route::resource('/dashboard/todo', TodoController::class);
     // Route::view('/dashboard/masa-aktif', 'admin.masa-aktif.index');
     Route::resource('/dashboard/gaji', GajiController::class);
     Route::get('/gaji-delete/{id}', 'App\Http\Controllers\GajiController@destroy');

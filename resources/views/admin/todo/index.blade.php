@@ -17,9 +17,11 @@
           <li>
             <div class="form-check">
               <label class="form-check-label">
+                @foreach ($todo as $td)
                 <input class="checkbox" type="checkbox">
-
+                {{ $td->nama_pekerjaan }}
               </label>
+              @endforeach
             </div>
 
           </li>
@@ -28,12 +30,14 @@
       </div>
       <h4 class="px-3 text-muted mt-5 font-weight-light mb-0">Events</h4>
       <div class="events pt-4 px-3 mb-4">
+        @foreach ($todo as $td)
 
         <div class="wrapper d-flex mb-2">
           <i class="ti-control-record text-primary mr-2"></i>
-          <span></span>
+          <span>{{ $td->nama_pekerjaan }}</span>
         </div>
-        <p class="mb-0 font-weight-thin text-gray my-2"></p>
+        <p class="mb-0 font-weight-thin text-gray my-2">{{ $td->tanggal }}</p>
+        @endforeach
       </div>
     </div>
     <!-- To do section tab ends -->

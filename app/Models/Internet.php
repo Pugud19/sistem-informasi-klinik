@@ -24,4 +24,7 @@ class Internet extends Model
     public function pengguna(){
         return $this->hasMany(Pengguna::class);
     }
+    public function pembayaran(){
+        return $this->hasMany(Pembayaran::class);
+    }
 }
