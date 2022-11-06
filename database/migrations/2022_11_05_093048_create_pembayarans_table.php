@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('alamat');
             $table->string('no_hp');
             $table->dateTime('tanggal');
-            $table->dateTime('tipe_pembayaran');
+            $table->enum('tipe_pembayarana', array('bulanan','pasang'));
             $table->bigInteger('nama_paket')->unsigned();
             $table->timestamps();
 

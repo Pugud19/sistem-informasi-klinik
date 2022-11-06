@@ -29,6 +29,7 @@ class TodoController extends Controller
     public function create()
     {
         //
+        return view('admin.todo.index');
     }
 
     /**
@@ -40,6 +41,22 @@ class TodoController extends Controller
     public function store(Request $request)
     {
         //
+          // masukan proses data form ke db
+          $request->validate([
+            'nama_pekerjaan' => 'required',
+            'tanggal' => 'required|date',
+        ]);
+
+        $input = $request->all();
+        try {
+            Todo::create($input);
+
+            return redirect()->route('todo.index')
+                ->with('success', 'Masukkan data pengguna berhasil!');
+        } catch (\Exception $e){
+            return redirect()->back()
+                ->with('error', 'Maaf ada beberapa kesalahan!');
+        }
     }
 
     /**
@@ -82,8 +99,12 @@ class TodoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Todo $todo, $id)
     {
-        //
+        // delete data Pengguna
+        $todo::find($id);
+        $todo = Todo::where('id', $id)->delete();
+
+        return back()->with('success','Data Berhasil Dihapus');
     }
 }

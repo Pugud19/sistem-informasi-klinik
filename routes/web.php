@@ -36,6 +36,7 @@ Route::middleware(['access'])->group (function() {
     Route::get('/internet-delete/{id}', 'App\Http\Controllers\InternetController@destroy');
     Route::view('/dashboard/pembayaran', 'admin.pembayaran.index');
     Route::resource('/dashboard/todo', TodoController::class);
+    Route::get('/todo-delete/{id}', 'App\Http\Controllers\TodoController@destroy');
     // Route::view('/dashboard/masa-aktif', 'admin.masa-aktif.index');
     Route::resource('/dashboard/gaji', GajiController::class);
     Route::get('/gaji-delete/{id}', 'App\Http\Controllers\GajiController@destroy');

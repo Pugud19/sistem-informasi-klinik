@@ -1,31 +1,42 @@
 @extends('admin.index')
 
 @section('content')
-
 <div class="tab-content content-wrapper" id="setting-content">
     <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel" aria-labelledby="todo-section">
       <div class="add-items d-flex px-3 mb-0">
-        <form class="form w-100">
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <strong>Whoops!</strong> Ada sesuatu yang salah dengan data yang kamu input.<br><br>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+        <form class="form w-100" action="{{ route('todo.store')}}" method="POST">
           <div class="form-group d-flex">
-            <input type="text" class="form-control todo-list-input" placeholder="Add To-do">
-            <a href="index.php?hal=form_todo" type="submit" class="btn btn-primary mr-2">Add</a>
+            @csrf
+            <input type="text" class="form-control todo-list-input" name="nama_pekerjaan" placeholder="Add To-do">
+            <input class="typeahead" type="date" name="tanggal" >
+            <button type="submit" class="btn btn-primary mr-2">Add</button>
           </div>
         </form>
       </div>
       <div class="list-wrapper px-3">
         <ul class="d-flex flex-column-reverse todo-list">
-          <li>
-            <div class="form-check">
+            @foreach ($todo as $td)
+            <li>
+            <div class="form-check d-flex justify-conten-between">
               <label class="form-check-label">
-                @foreach ($todo as $td)
                 <input class="checkbox" type="checkbox">
                 {{ $td->nama_pekerjaan }}
               </label>
-              @endforeach
             </div>
-
-          </li>
-
+                <a href="/todo-delete/{{ $td->id }}" class="mx-2" title="Hapus data"><i class="ti-close text-danger"></i></a>
+            </li>
+            @endforeach
         </ul>
       </div>
       <h4 class="px-3 text-muted mt-5 font-weight-light mb-0">Events</h4>
