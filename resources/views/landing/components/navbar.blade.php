@@ -9,8 +9,8 @@
 
         <div class="navbar-collapse collapse" id="navbarContent">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="{{ url('/')}}">Home</a>
+            <li class="nav-item ">
+              <a class="nav-link scrollTo" href="#home">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link scrollTo" href="#about">About</a>
@@ -30,6 +30,9 @@
             @guest
             <li class="nav-item">
                 <a class="nav-link" href="{{ __('login')}}">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ __('register')}}">Register</a>
             </li>
             @else
             @if(Auth::user()->role == 'admin')
@@ -60,7 +63,7 @@
       </div>
     </nav>
 
-    <div class="container">
+    <div class="container"  id="home">
       <div class="page-banner home-banner">
         <div class="row align-items-center flex-wrap-reverse h-100">
           <div class="col-md-6 py-5 wow fadeInLeft">

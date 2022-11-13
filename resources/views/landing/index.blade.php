@@ -45,6 +45,10 @@
   $(".scrollTo").on('click', function(e) {
      e.preventDefault();
      var target = $(this).attr('href');
+     $('a').each(function () {
+            $(this).removeClass('active');
+        })
+        $(this).addClass('active');
      $('html, body').animate({
        scrollTop: ($(target).offset().top)
      }, 2000);

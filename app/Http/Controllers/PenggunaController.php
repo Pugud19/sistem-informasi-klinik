@@ -17,7 +17,7 @@ class PenggunaController extends Controller
     public function index()
     {
         // tampilkan data ke index dari db
-        $pengguna = Pengguna::latest()->paginate(10);
+        $pengguna = Pengguna::latest()->first()->paginate(20);
 
         return view('admin.pengguna.index', compact('pengguna'))
         ->with('no', (request()->input('page', 1) - 1) * 5);
@@ -150,4 +150,18 @@ class PenggunaController extends Controller
 
         return back()->with('success','Data Berhasil Dihapus');
     }
+
+    public function search(Request $request)
+	{
+		// menangkap data pencarian
+		$search = $request->search;
+    	// mengambil data dari table product sesuai pencarian data
+		$pengguna = Pengguna::where('nama', 'like', "%" . $search . "%")->paginate(50);
+
+		return view('admin.pengguna.index', compact('pengguna'))->with('no', (request()->input('page', 1) - 1) * 5);
+
+    }
+
+
+
 }

@@ -3,6 +3,7 @@
 use App\Http\Controllers\GajiController;
 use App\Http\Controllers\InternetController;
 use App\Http\Controllers\MasaAktifController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\TodoController;
 use App\Http\Controllers\UserController;
@@ -31,6 +32,8 @@ Route::middleware(['access'])->group (function() {
     // Route::get('/dashboard/masa-aktif', [MasaAktifController::class, 'create'])->name('create');
     // Route::resource('/dashboard/data', MasaAktifController::class);
     Route::resource('/dashboard/pengguna', PenggunaController::class);
+    Route::get('/dashboard/penggunas', [PenggunaController::class, 'search'])->name('search');
+
     Route::get('/pengguna-delete/{id}', 'App\Http\Controllers\PenggunaController@destroy')->name("hapus");
     Route::resource('/dashboard/internet', InternetController::class);
     Route::get('/internet-delete/{id}', 'App\Http\Controllers\InternetController@destroy');
@@ -53,8 +56,9 @@ Route::get('/home', [InternetController::class, 'ambil'])->name('ambil');
 Route::view('/about', 'landing.about');
 Route::view('/service', 'landing.service');
 
-Route::view('/payment', 'payment.payment');
-Route::view('/payment-form', 'payment.paymentForm');
+// Route::view('/payment', 'payment.payment');
+Route::get('/payment-form', [PaymentController::class, 'index']);
+Route::get('/payment', [PaymentController::class, 'payment']);
 
 
 

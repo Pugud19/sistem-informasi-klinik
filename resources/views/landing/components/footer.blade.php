@@ -1,9 +1,9 @@
 <footer class="page-footer bg-image" style="background-image: url(landing/img/world_pattern.svg);">
     <div class="container">
-      <div class="row mb-5">
+      <div class="row mb-5 d-flex justify-content-center">
         <div class="col-lg-3 py-3">
-          <h3>SEOGram</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero amet, repellendus eius blanditiis in iusto eligendi iure.</p>
+          <h3>AmretaNet.</h3>
+          <p>Bergabunglah untuk solusi internet anda yang sangat baik dan cepat.</p>
 
           <div class="social-media-button">
             <a href="#"><span class="mai-logo-facebook-f"></span></a>
@@ -14,31 +14,14 @@
           </div>
         </div>
         <div class="col-lg-3 py-3">
-          <h5>Company</h5>
-          <ul class="footer-menu">
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Career</a></li>
-            <li><a href="#">Advertise</a></li>
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Help & Support</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-3 py-3">
           <h5>Contact Us</h5>
-          <p>203 Fake St. Mountain View, San Francisco, California, USA</p>
-          <a href="#" class="footer-link">+00 1122 3344 5566</a>
-          <a href="#" class="footer-link">seogram@temporary.com</a>
-        </div>
-        <div class="col-lg-3 py-3">
-          <h5>Newsletter</h5>
-          <p>Get updates, news or events on your mail.</p>
-          <form action="#">
-            <input type="text" class="form-control" placeholder="Enter your email..">
-            <button type="submit" class="btn btn-success btn-block mt-2">Subscribe</button>
-          </form>
+          <p>Jl. Pasirkuya No.88-47, Cipacing, Kec. Jatinangor, Kabupaten Sumedang, Jawa Barat 45363</p>
+          <a href="#" class="footer-link">+62 8515 6101 271</a>
+          <a href="#" class="footer-link">pugudbenjapu19@gmail.com</a>
         </div>
       </div>
 
-      <p class="text-center" id="copyright">Copyright &copy; 2020. This template design and develop by <a href="https://macodeid.com/" target="_blank">MACode ID</a></p>
+      <p class="text-center" id="copyright">Copyright &copy; <script>document.write(new Date().getFullYear())</script>
+        . This website design and develop by <a href="https://www.linkedin.com/in/pugud-pambudi-b30171231/" target="_blank">pugud</a></p>
     </div>
   </footer>

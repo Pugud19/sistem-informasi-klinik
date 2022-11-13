@@ -7,8 +7,29 @@
         <div class="card-body my-3">
             <div class="d-flex justify-content-between">
                 <p class="card-title">Data Pengguna Jasa</p>
+                <div class="d-flex justify-content-around">
+                {{-- search box --}}
                 <div>
-                    <a href="{{ route('pengguna.create')}}"  class="btn btn-primary mr-2 mb-3"><i class="fa fa-plus"></i> Tambah</a>
+                    <form action="{{ route('search') }}" method="GET">
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control py-4 input-text input-color text-monospace"
+                                    placeholder="Search nama Pengguna.." name="search" aria-label="Recipient's username"
+                                    aria-describedby="basic-addon2" value="{{ old('search') }}">
+                                <div class="input-group-append">
+                                    <button class="btn btn-submit btn-lg color-btn" type="submit"><i
+                                            class="fa fa-search"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                {{-- search box --}}
+                {{-- button tambah pengguna --}}
+                <div>
+                <a href="{{ route('pengguna.create')}}"  class="btn btn-primary mr-2 mb-3"><i class="fa fa-plus"></i> Tambah</a>
+                </div>
+                {{-- button tambah pengguna --}}
                 </div>
             </div>
             <div class="col-md-12 col-lg-12">

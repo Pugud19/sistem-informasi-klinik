@@ -13,28 +13,28 @@
                     <div class="row main text-center">
                         <div class="col-12"><h3>Form Pembayaran AmretaNet.</h3></div>
                     </div>
-                        <form class="form-card">
+            <form class="form-card" action="/payment" method="GET">
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label class="form-control-placeholder p-0" for="number">Nama</label>
-                                <input type="text" class="form-control p-0" id="number" required>
+                                    <label class="form-control-placeholder p-0" for="nama">Nama</label>
+                                <input type="text" class="form-control p-0" name="nama" placeholder="Masukkan Nama ..">
                              </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label class="form-control-placeholder p-0" for="name">Alamat</label>
-                                <input type="text" class="form-control p-0" id="name" required>
+                                    <label class="form-control-placeholder p-0" for="alamat">Alamat</label>
+                                <input type="text" class="form-control p-0" name="alamat" placeholder="Masukkan Alamat ..">
                              </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label class="form-control-placeholder p-0" for="name">No Hp</label>
-                                <input type="text" class="form-control p-0" id="name" required>
+                                    <label class="form-control-placeholder p-0" for="number">No Hp</label>
+                                <input type="text" class="form-control p-0" name="number" placeholder="+62 ..">
                              </div>
                             </div>
                         </div>
@@ -42,27 +42,30 @@
                         <div class="row">
                             <div class="col-sm-4 col-12">
                                 <div class="form-group">
-                                    <input type="text" class="form-control p-0" id="sdate" required><label class="form-control-placeholder p-0" for="sdate">Tanggal</label>
+                                    <input type="datetime-local" class="form-control p-0" name="date" ><label class="form-control-placeholder p-0" for="sdate">Tanggal</label>
                                 </div>
                             </div>
                             <div class="col-sm-4 col-12">
                                 <div class="form-group">
-                                    <input type="text" class="form-control p-0" id="expdate" required><label class="form-control-placeholder p-0" for="expdate">Tipe Pembayaran</label>
+                                    <select class="form-control p-0" name="tipe_pembayaran" id="tp">
+                                        <option value="bulanan">Bulanan</option>
+                                    </select>
+                                    <label class="form-control-placeholder p-0" for="tp">Tipe Pembayaran</label>
                                  </div>
                             </div>
                             <div class="col-sm-4 col-12">
                                 <div class="form-group">
-                                    <input type="password" class="form-control p-0" id="passw" required><label class="form-control-placeholder p-0" for="passw">Nama Paket</label>
+                                    <input type="text" class="form-control p-0" name="nama_paket"><label class="form-control-placeholder p-0" for="passw">Nama Paket</label>
                             </div>
                             </div>
                         </div>
                         <div class="row mb-2">
                             <div class="col-sm-12">
-                                <button type="button" class="btn btn-primary btn-block">Pay process</button>
+                                <button type="submit" class="btn btn-primary btn-block">Pay process</button>
                             </div>
                         </div>
 
-                    </form>
+            </form>
 
                 </div>
             </div>
