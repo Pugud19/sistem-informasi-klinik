@@ -15,16 +15,18 @@ return new class extends Migration
     {
         Schema::create('pembayarans', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('alamat');
-            $table->string('no_hp');
-            $table->dateTime('tanggal');
-            $table->enum('tipe_pembayarana', array('bulanan','pasang'));
-            $table->bigInteger('nama_paket')->unsigned();
+            $table->string('status');
+            $table->string('name');
+            $table->string('email');
+            $table->string('number');
+            $table->string('transaction_id');
+            $table->integer('order_id');
+            $table->string('gross_amount');
+            $table->string('payment_type');
+            $table->string('payment_code')->nullable();
+            $table->string('pdf_url')->nullable();
             $table->timestamps();
 
-            $table->foreign('nama_paket')->references('id')->on('internets')
-            ->onDelete('cascade');
         });
     }
 

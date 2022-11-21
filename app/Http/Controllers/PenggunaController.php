@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Internet;
+use App\Models\Pembayaran;
 use App\Models\Pengguna;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -17,7 +18,7 @@ class PenggunaController extends Controller
     public function index()
     {
         // tampilkan data ke index dari db
-        $pengguna = Pengguna::latest()->first()->paginate(20);
+        $pengguna = Pengguna::paginate(20);
 
         return view('admin.pengguna.index', compact('pengguna'))
         ->with('no', (request()->input('page', 1) - 1) * 5);
@@ -32,9 +33,10 @@ class PenggunaController extends Controller
     {
         // create data ke db
         // $internet = Internet::all();
+        $user = User::all();
 
         // return view('admin.pengguna.create', compact('internet'));
-        return view('admin.pengguna.create');
+        return view('admin.pengguna.create', compact('user'));
     }
 
     /**
@@ -48,6 +50,7 @@ class PenggunaController extends Controller
         // masukan proses data form ke db
         $request->validate([
             'costumer_id' => 'required|numeric',
+            'user_id' => 'required|numeric',
             'paket' => 'required',
             'nama' => 'required|max:60',
             'router' => 'required|max:60',
@@ -112,6 +115,7 @@ class PenggunaController extends Controller
         // edit form ke db
         $request->validate([
             'costumer_id' => 'required|numeric',
+            'user_id' => 'required|numeric',
             'paket' => 'required',
             'nama' => 'required|max:60',
             'router' => 'required|max:60',
@@ -162,6 +166,10 @@ class PenggunaController extends Controller
 
     }
 
-
+    public function tagihan(Request $request, User $user){
+        $user = Pembayaran::find(1)->user;
+        // dd($user);
+        return view('landing.tagihan');
+    }
 
 }

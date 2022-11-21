@@ -32,6 +32,12 @@
 
   @include('landing.components.footer')
 
+  @if(session('success'))
+    <script>alert("{{session('success')}}")</script>
+  @elseif (session("error"))
+  <script>alert("{{session('error')}}")</script>
+  @endif
+
 <script src="{{ asset('landing/js/jquery-3.5.1.min.js')}}"></script>
 
 <script src="{{ asset('landing/js/bootstrap.bundle.min.js')}}"></script>

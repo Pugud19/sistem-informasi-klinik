@@ -25,8 +25,8 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label class="form-control-placeholder p-0" for="alamat">Alamat</label>
-                                <input type="text" class="form-control p-0" name="alamat" placeholder="Masukkan Alamat ..">
+                                    <label class="form-control-placeholder p-0" for="email">email</label>
+                                <input type="text" class="form-control p-0" name="email" placeholder="Masukkan email ..">
                              </div>
                             </div>
                         </div>
@@ -39,7 +39,7 @@
                             </div>
                         </div>
                         <br>
-                        <div class="row">
+                        {{-- <div class="row">
                             <div class="col-sm-4 col-12">
                                 <div class="form-group">
                                     <input type="datetime-local" class="form-control p-0" name="date" ><label class="form-control-placeholder p-0" for="sdate">Tanggal</label>
@@ -58,10 +58,10 @@
                                     <input type="text" class="form-control p-0" name="nama_paket"><label class="form-control-placeholder p-0" for="passw">Nama Paket</label>
                             </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="row mb-2">
                             <div class="col-sm-12">
-                                <button type="submit" class="btn btn-primary btn-block">Pay process</button>
+                                <button type="submit" class="btn btn-primary btn-block">Confirm Payment</button>
                             </div>
                         </div>
 

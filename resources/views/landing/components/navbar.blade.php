@@ -22,7 +22,7 @@
               <a class="nav-link scrollTo" href="#contact">Contact</a>
             </li>
             <li class="nav-item">
-              <a class="btn btn-primary ml-lg-2" href="#">Free Analytics</a>
+              <a class="btn btn-primary ml-lg-2" href="{{ __('tagihan')}}">Tagihan</a>
             </li>
             {{-- <li class="nav-item">
                 <a class="nav-link" href="{{ __('logout')}}">Logout</a>

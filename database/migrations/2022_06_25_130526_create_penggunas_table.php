@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('penggunas', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('costumer_id');
+            $table->unsignedBigInteger('user_id');
             $table->string('paket');
             $table->string('nama');
             $table->string('tempat');
@@ -27,8 +28,8 @@ return new class extends Migration
             $table->string('keterangan');
             $table->timestamps();
 
-            // $table->foreign('internet_id')->references('id')->on('internets')
-            // ->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')
+            ->onDelete('cascade');
         });
     }
 

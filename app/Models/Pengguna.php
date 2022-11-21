@@ -28,7 +28,7 @@ class Pengguna extends Model
     // public function internet(){
     //     return $this->belongsTo(Internet::class);
     // }
-    public function masaAktif(){
-        return $this->hasOne(MasaAktif::class);
+    public function userData(){
+        return $this->belongsTo(User::class);
     }
 }

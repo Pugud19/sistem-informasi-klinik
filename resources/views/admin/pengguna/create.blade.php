@@ -62,7 +62,19 @@
             <div id="the-basics">
               <input class="typeahead" type="text" name="router">
             </div>
-          </div>
+        </div>
+        <div class="col">
+            <label>User Id</label>
+            <div id="the-basics">
+              {{-- <input class="typeahead" type="text" name="status_tagihan"> --}}
+              <select name="user_id" class="form-control">
+                <option>== pilih User Id ==</option>
+                @foreach ($user as $u)
+                <option value="{{ $u->id }}">{{ $u->name }} </option>
+                @endforeach
+            </select>
+            </div>
+        </div>
         </div>
         <div class="form-group row">
             <div class="col">

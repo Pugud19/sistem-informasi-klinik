@@ -9,18 +9,18 @@ class Pembayaran extends Model
 {
     use HasFactory;
     protected $table = 'pembayarans';
-    protected $guarded = ['id'];
+    protected $guarded = [];
 
-    protected $fillabe = [
-        'nama',
-        'alamat',
-        'no_hp',
-        'tanggal',
-        'tipe_pembayaran',
-        'nama_paket',
-    ];
+    // protected $fillabe = [
+    //     'nama',
+    //     'alamat',
+    //     'no_hp',
+    //     'tanggal',
+    //     'tipe_pembayaran',
+    //     'nama_paket',
+    // ];
 
-    public function internet(){
-        return $this->belongsTo(MasaAktif::class);
-    }
+    // public function internet(){
+    //     return $this->belongsTo(MasaAktif::class);
+    // }
 }

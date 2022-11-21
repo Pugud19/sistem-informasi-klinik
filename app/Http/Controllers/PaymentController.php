@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pembayaran;
 use Illuminate\Http\Request;
 
 class PaymentController extends Controller
@@ -14,7 +15,7 @@ class PaymentController extends Controller
     public function payment(Request $request)
     {
         // Set your Merchant Server Key
-	\Midtrans\Config::$serverKey = 'SB-Mid-server-zak8uJ90ocxGrPEhIo11_-ca';
+	\Midtrans\Config::$serverKey = env('MIDTRANS_SERVER_KEY');
 	// Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
 	\Midtrans\Config::$isProduction = false;
 	// Set sanitization on (default)
@@ -37,12 +38,9 @@ class PaymentController extends Controller
         ),
 	    'customer_details' => array(
 	        'first_name' => $request->get('nama'),
-	        'alamat' => $request->get('alamat'),
-	        'email' => 'budi.pra@example.com',
+	        'last_name' => '',
+	        'email' => $request->get('email'),
 	        'phone' => $request->get('number'),
-	        'date' => $request->get('date'),
-	        'tipe_pembayaran' => $request->get('tipe_pembayaran'),
-	        'nama_paket' => $request->get('nama_paket'),
 	    ),
 	);
 
@@ -50,5 +48,25 @@ class PaymentController extends Controller
     // return $snapToken;
 
     return view('payment.payment', ['snap_token'=>$snapToken]);
+    }
+
+    public function payment_post(Request $request){
+        $json = json_decode($request->get('json'));
+
+        $order = new Pembayaran();
+        $order->status = $json->transaction_status;
+        $order->name = $request->get('nama');
+        $order->email = $request->get('email');
+        $order->number = $request->get('number');
+        $order->transaction_id = $json->transaction_id;
+        $order->order_id = $json->order_id;
+        $order->gross_amount = $json->gross_amount;
+        $order->payment_type = $json->payment_type;
+        $order->payment_code = isset($json->payment_code) ? $json->payment_code : null;
+        $order->pdf_url = isset($json->pdf_url) ? $json->pdf_url : null;
+
+        return $order->save() ? redirect(url('/'))
+        ->with('success', 'Order Berhasil dibuat!') : redirect(url('/'))
+        ->with('error', 'Transaksi Gagal!');
     }
 }

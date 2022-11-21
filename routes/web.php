@@ -59,6 +59,8 @@ Route::view('/service', 'landing.service');
 // Route::view('/payment', 'payment.payment');
 Route::get('/payment-form', [PaymentController::class, 'index']);
 Route::get('/payment', [PaymentController::class, 'payment']);
+Route::post('/payment', [PaymentController::class, 'payment_post']);
+Route::get('/tagihan', [PenggunaController::class, 'tagihan'])->name('tagihan');
 
 
 

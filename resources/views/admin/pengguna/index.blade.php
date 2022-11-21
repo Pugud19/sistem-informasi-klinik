@@ -39,6 +39,7 @@
                     <tr>
                       <th>No</th>
                       <th>Costumer Id</th>
+                      <th>User Id</th>
                       <th>Paket</th>
                       <th>Nama</th>
                       <th>Tempat</th>
@@ -56,6 +57,7 @@
                     <tr>
                       <td>{{ ++$no }}</td>
                       <td>{{ $p->costumer_id }}</td>
+                      <td>{{ $p->user_id }}</td>
                       <td>{{ $p->paket }}</td>
                       <td>{{ $p->nama }}</td>
                       <td>{{ $p->tempat }}</td>

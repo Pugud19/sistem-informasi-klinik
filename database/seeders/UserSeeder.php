@@ -19,6 +19,7 @@ class UserSeeder extends Seeder
         $user = [
             [
                'name'=>'Super Admin',
+               'email_verified_at'=> now(),
                'email'=>'admin@example.com',
                 'role'=>'admin',
                 'isactive'=>'1',
