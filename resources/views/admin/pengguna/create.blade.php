@@ -6,7 +6,7 @@
       <div class="card-body">
         <h4 class="card-title text-center">Form Tambah Pengguna</h4>
         <p class="card-description text-center">
-          Form Create Pengguna Internet
+          Form Create Pengguna Wifi
         </p>
         @if ($errors->any())
         <div class="alert alert-danger">
@@ -69,8 +69,8 @@
               {{-- <input class="typeahead" type="text" name="status_tagihan"> --}}
               <select name="user_id" class="form-control">
                 <option>== pilih User Id ==</option>
-                @foreach ($user as $u)
-                <option value="{{ $u->id }}">{{ $u->name }} </option>
+                @foreach ($user as $us)
+                <option value="{{ $us->id }}">{{ $us->name }} </option>
                 @endforeach
             </select>
             </div>

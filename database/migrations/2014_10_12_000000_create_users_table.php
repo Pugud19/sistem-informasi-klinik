@@ -18,10 +18,10 @@ return new class extends Migration
             $table->string('name');
             // $table->string('username');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at');
+            $table->timestamp('email_verified_at')->default(now());
             $table->string('password');
             $table->enum('role', ['user', 'admin'])->default('user');
-            $table->enum('isactive', ['1', '0'])->default('0');
+            $table->enum('isactive', ['1', '0'])->default('1');
             $table->rememberToken();
             $table->timestamps();
         });

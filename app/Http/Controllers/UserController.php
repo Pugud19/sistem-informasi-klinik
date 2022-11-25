@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pembayaran;
+use App\Models\Pengguna;
 use App\Models\User;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -105,5 +109,14 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function tagihan(Pengguna $pengguna){
+        // $pengguna = Pengguna::find(1);
+        $userId = Auth::user()->id;
+        $pengguna = Pengguna::where('user_id',$userId)->get();
+        // $pengguna = User::find($id);
+        // dd($pengguna);
+        return view('landing.tagihan', compact('pengguna'));
     }
 }

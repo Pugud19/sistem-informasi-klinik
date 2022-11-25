@@ -7,6 +7,8 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\TodoController;
 use App\Http\Controllers\UserController;
+use App\Models\Pembayaran;
+use App\Models\Pengguna;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -45,6 +47,8 @@ Route::middleware(['access'])->group (function() {
     Route::get('/gaji-delete/{id}', 'App\Http\Controllers\GajiController@destroy');
     Route::resource('/dashboard/users', UserController::class);
 
+
+
 });
 
 // ========== Route For landing ==============
@@ -60,7 +64,8 @@ Route::view('/service', 'landing.service');
 Route::get('/payment-form', [PaymentController::class, 'index']);
 Route::get('/payment', [PaymentController::class, 'payment']);
 Route::post('/payment', [PaymentController::class, 'payment_post']);
-Route::get('/tagihan', [PenggunaController::class, 'tagihan'])->name('tagihan');
+Route::get('/tagihan', [UserController::class, 'tagihan'])->name('tagihan');
+// Route::get('/tagihans', [PenggunaController::class, 'tagihans']);
 
 
 

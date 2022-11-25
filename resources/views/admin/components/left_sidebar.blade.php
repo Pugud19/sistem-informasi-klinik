@@ -38,11 +38,11 @@
               <span class="menu-title">Daftar Kerjaan</span>
             </a>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a class="nav-link" href="{{ url('/dashboard/documentation')}}">
               <i class="icon-paper menu-icon"></i>
               <span class="menu-title">Documentation</span>
             </a>
-          </li>
+          </li> --}}
         </ul>
       </nav>

@@ -14,6 +14,7 @@ class Pengguna extends Model
 
     protected $fillable = [
         'costumer_id',
+        'user_id',
         'teknisi',
         'paket',
         'nama',
@@ -29,6 +30,6 @@ class Pengguna extends Model
     //     return $this->belongsTo(Internet::class);
     // }
     public function userData(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

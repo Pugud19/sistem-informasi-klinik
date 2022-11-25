@@ -50,7 +50,7 @@ class PenggunaController extends Controller
         // masukan proses data form ke db
         $request->validate([
             'costumer_id' => 'required|numeric',
-            'user_id' => 'required|numeric',
+            'user_id' => 'required',
             'paket' => 'required',
             'nama' => 'required|max:60',
             'router' => 'required|max:60',
@@ -115,7 +115,7 @@ class PenggunaController extends Controller
         // edit form ke db
         $request->validate([
             'costumer_id' => 'required|numeric',
-            'user_id' => 'required|numeric',
+            'user_id' => 'required',
             'paket' => 'required',
             'nama' => 'required|max:60',
             'router' => 'required|max:60',
@@ -165,11 +165,10 @@ class PenggunaController extends Controller
 		return view('admin.pengguna.index', compact('pengguna'))->with('no', (request()->input('page', 1) - 1) * 5);
 
     }
-
-    public function tagihan(Request $request, User $user){
-        $user = Pembayaran::find(1)->user;
-        // dd($user);
-        return view('landing.tagihan');
-    }
+    // public function tagihans(Request $request, User $user){
+    //     $user = User::find(2);
+    //     dd($user);
+    //     // return view('landing.tagihan', compact('user'));
+    // }
 
 }
