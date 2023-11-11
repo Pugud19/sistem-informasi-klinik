@@ -148,7 +148,7 @@
     </div> <!-- .container -->
   </div> <!-- .page-section -->
 
-@if($internet->isEmpty())
+{{-- @if($internet->isEmpty())
 <div></div>
 @else
 <div class="page-section" id="paket">
@@ -184,7 +184,7 @@
       </div>
     </div> <!-- .container -->
 </div>
-@endif <!-- .page-section -->
+@endif <!-- .page-section --> --}}
 
       {{-- contact section --}}
     <div class="page-section" id="contact">

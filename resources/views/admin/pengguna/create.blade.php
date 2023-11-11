@@ -28,40 +28,19 @@
               <input class="typeahead" type="text" name="nama">
             </div>
           </div>
-          <div class="col">
-            <label>Paket</label>
-            <div id="bloodhound">
-              {{-- <select name="user_id" class="form-control">
-                <option>== pilih user id ==</option>
-                @foreach ($user as $u)
-                <option value="{{ $u->id }}">{{ $u->name }}</option>
-                @endforeach
-              </select> --}}
-              <input class="typeahead" type="text" name="paket">
-
-            </div>
-          </div>
-        </div>
-        <div class="form-group row">
-            <div class="col">
-              <label>Costumer id</label>
-              <div id="bloodhound">
-                <input class="typeahead" type="text" name="costumer_id">
-              </div>
-            </div>
-            <div class="col">
-              <label>Teknisi</label>
-              <div id="bloodhound">
-                <input class="typeahead" type="text" name="teknisi">
-              </div>
-            </div>
         </div>
         <div class="form-group row">
         <div class="col">
-            <label>router</label>
+            <label>Wilayah</label>
             <div id="the-basics">
-              <input class="typeahead" type="text" name="router">
-            </div>
+                {{-- <input class="typeahead" type="text" name="status_tagihan"> --}}
+                <select name="wilayah_id" class="form-control">
+                  <option>== pilih Wilayah Id ==</option>
+                  @foreach ($wilayah as $wl)
+                  <option value="{{ $wl->id }}">{{ $wl->nama_wilayah }} </option>
+                  @endforeach
+                </select>
+              </div>
         </div>
         <div class="col">
             <label>User Id</label>
@@ -72,50 +51,17 @@
                 @foreach ($user as $us)
                 <option value="{{ $us->id }}">{{ $us->name }} </option>
                 @endforeach
-            </select>
-            </div>
-        </div>
-        </div>
-        <div class="form-group row">
-            <div class="col">
-              <label>Tempat</label>
-              <div id="the-basics">
-                <input class="typeahead" type="text" name="tempat">
-              </div>
-            </div>
-            <div class="col">
-              <label>Tagihan</label>
-              <div id="bloodhound">
-                <input class="typeahead" type="text" name="tagihan">
-              </div>
-            </div>
-          </div>
-        <div class="form-group row">
-          <div class="col">
-            <label>Status Tagihan</label>
-            <div id="the-basics">
-              {{-- <input class="typeahead" type="text" name="status_tagihan"> --}}
-              <select name="status_tagihan" class="form-control">
-                <option>== pilih Status Tagihan ==</option>
-                <option value="1">1</option>
-                <option value="0">0</option>
               </select>
             </div>
-          </div>
+        </div>
+        </div>
+        <div class="form-group row">
           <div class="col">
             <label>Nomor Hp</label>
             <div id="bloodhound">
               <input class="typeahead" type="text" name="nomor_hp">
             </div>
           </div>
-        </div>
-        <div class="form-group row">
-            <div class="col">
-              <label>Keterangan</label>
-              <div id="the-basics">
-                <input class="typeahead" type="text" name="keterangan">
-              </div>
-            </div>
         </div>
         <div class="d-flex justify-content-center">
         <button type="submit" name="proses" class="btn btn-primary mr-2">submit</button>

@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header text-center">
-                <a href="{{ __('login') }}"><img class="img-fluid" src="{{ asset('img/bg-core/stiker amreta net.png')}}" alt="" srcset=""></a>
+                <a href="{{ __('login') }}"><img class="img-fluid" src="{{ asset('img/bg-core/hospital.jpg')}}" alt="" srcset=""></a>
                 </div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">

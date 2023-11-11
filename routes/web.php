@@ -52,10 +52,10 @@ Route::middleware(['access'])->group (function() {
 });
 
 // ========== Route For landing ==============
-// Route::view('/', 'landing.home');
+Route::view('/', 'landing.home');
 // Route::view('/home', 'landing.home');
-Route::get('/', [InternetController::class, 'ambil'])->name('ambil');
-Route::get('/home', [InternetController::class, 'ambil'])->name('ambil');
+// Route::get('/', [InternetController::class, 'ambil'])->name('ambil');
+// Route::get('/home', [InternetController::class, 'ambil'])->name('ambil');
 // Route::get('/home', 'InternetController@ambil');
 Route::view('/about', 'landing.about');
 Route::view('/service', 'landing.service');

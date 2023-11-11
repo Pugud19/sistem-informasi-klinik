@@ -38,35 +38,21 @@
                   <thead>
                     <tr>
                       <th>No</th>
-                      <th>Costumer Id</th>
                       <th>User Id</th>
-                      <th>Paket</th>
                       <th>Nama</th>
-                      <th>Tempat</th>
-                      <th>Router</th>
-                      <th>Teknisi</th>
-                      <th>Tagihan</th>
-                      <th>Status tagihan</th>
+                      <th>Wilayah Id</th>
                       <th>Nomor hp</th>
-                      <th>Keterangan</th>
-                      <th>Aksi</th>
+                      <th>Settings</th>
                     </tr>
                   </thead>
                   <tbody>
                     @foreach ($pengguna as $p)
                     <tr>
                       <td>{{ ++$no }}</td>
-                      <td>{{ $p->costumer_id }}</td>
                       <td>{{ $p->user_id }}</td>
-                      <td>{{ $p->paket }}</td>
                       <td>{{ $p->nama }}</td>
-                      <td>{{ $p->tempat }}</td>
-                      <td>{{ $p->router }}</td>
-                      <td>{{ $p->teknisi }}</td>
-                      <td>{{ number_format($p->tagihan) }}</td>
-                      <td>{{ $p->status_tagihan }}</td>
+                      <td>{{ $p->wilayah_id }}</td>
                       <td>{{ $p->nomor_hp }}</td>
-                      <td>{{ $p->keterangan }}</td>
                       <td>
                         <span class="d-flex justify-content-center">
                             <a href="{{ route('pengguna.edit', $p->id)}}" class="btn btn-sm btn-warning mx-1" title="Ubah data"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>

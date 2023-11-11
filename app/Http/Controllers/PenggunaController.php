@@ -6,6 +6,7 @@ use App\Models\Internet;
 use App\Models\Pembayaran;
 use App\Models\Pengguna;
 use App\Models\User;
+use App\Models\Wilayah;
 use Illuminate\Http\Request;
 
 class PenggunaController extends Controller
@@ -32,11 +33,13 @@ class PenggunaController extends Controller
     public function create()
     {
         // create data ke db
+
         // $internet = Internet::all();
         $user = User::all();
+        $wilayah = Wilayah::all();
 
         // return view('admin.pengguna.create', compact('internet'));
-        return view('admin.pengguna.create', compact('user'));
+        return view('admin.pengguna.create', compact('user', 'wilayah'));
     }
 
     /**
@@ -49,16 +52,9 @@ class PenggunaController extends Controller
     {
         // masukan proses data form ke db
         $request->validate([
-            'costumer_id' => 'required|numeric',
             'user_id' => 'required',
-            'paket' => 'required',
             'nama' => 'required|max:60',
-            'router' => 'required|max:60',
-            'teknisi' => 'required|max:60',
-            'tempat' => 'required|max:60',
-            'tagihan' => 'required|max:60',
-            'status_tagihan' => 'required',
-            'keterangan' => 'required|max:60',
+            'wilayah_id' => 'required|max:60',
             'nomor_hp' => 'nullable',
         ]);
 
@@ -99,8 +95,7 @@ class PenggunaController extends Controller
     public function edit(Pengguna $pengguna)
     {
         // return view edit ke form
-        $user = User::all();
-        return view('admin.pengguna.edit', compact('user', 'pengguna'));
+        return view('admin.pengguna.edit', compact('pengguna'));
     }
 
     /**
@@ -114,16 +109,7 @@ class PenggunaController extends Controller
     {
         // edit form ke db
         $request->validate([
-            'costumer_id' => 'required|numeric',
-            'user_id' => 'required',
-            'paket' => 'required',
             'nama' => 'required|max:60',
-            'router' => 'required|max:60',
-            'teknisi' => 'required|max:60',
-            'tempat' => 'required|max:60',
-            'tagihan' => 'required|max:60',
-            'status_tagihan' => 'required',
-            'keterangan' => 'required|max:60',
             'nomor_hp' => 'nullable',
         ]);
 
