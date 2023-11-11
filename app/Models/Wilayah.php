@@ -5,17 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Internet extends Model
+class WWilayah extends Model
 {
     use HasFactory;
-    protected $table = 'internets';
+    protected $table = 'wilayahs';
     protected $guarded = ['id'];
 
     protected $fillabe = [
-        'paket',
-        'kecepatan',
-        'lama_penggunaan',
-        'harga',
+        'nama_wilayah'
     ];
 
     public function masaAktif(){
@@ -23,8 +20,5 @@ class Internet extends Model
     }
     public function pengguna(){
         return $this->hasMany(Pengguna::class);
-    }
-    public function pembayaran(){
-        return $this->hasMany(Pembayaran::class);
     }
 }

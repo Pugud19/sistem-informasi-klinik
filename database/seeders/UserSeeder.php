@@ -24,7 +24,15 @@ class UserSeeder extends Seeder
                 'role'=>'admin',
                 'isactive'=>'1',
                'password'=> bcrypt('admin123'),
-            ]
+            ],
+            [
+                'name'=>'Dita Karang',
+                'email_verified_at'=> now(),
+                'email'=>'dita@example.com',
+                 'role'=>'pegawai',
+                 'isactive'=>'1',
+                'password'=> bcrypt('pegawai123'),
+             ]
         ];
         foreach ($user as $key => $value) {
             User::create($value);

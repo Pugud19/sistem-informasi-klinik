@@ -13,13 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('internets', function (Blueprint $table) {
+        Schema::create('tindakans', function (Blueprint $table) {
             $table->id();
-            $table->string('paket');
-            $table->string('kecepatan');
-            $table->string('lama_penggunaan');
-            $table->bigInteger('harga');
+            $table->string('deskripsi_tindakan');
+            $table->unsignedBigInteger('obat_id');
+            $table->dateTime('tanggal');
             $table->timestamps();
+
+            $table->foreign('obat_id')->references('id')->on('obats')
+            ->onDelete('cascade');
         });
     }
 
@@ -30,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('internets');
+        Schema::dropIfExists('tindakans');
     }
 };

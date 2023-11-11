@@ -15,20 +15,16 @@ return new class extends Migration
     {
         Schema::create('penggunas', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('costumer_id');
             $table->unsignedBigInteger('user_id');
-            $table->string('paket');
             $table->string('nama');
-            $table->string('tempat');
-            $table->bigInteger('tagihan');
-            $table->string('router');
-            $table->string('teknisi');
-            $table->string('status_tagihan');
+            $table->unsignedBigInteger('wilayah_id');
             $table->bigInteger('nomor_hp')->nullable(true);
-            $table->string('keterangan');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')
+            ->onDelete('cascade');
+
+            $table->foreign('wilayah_id')->references('id')->on('wilayahs')
             ->onDelete('cascade');
         });
     }

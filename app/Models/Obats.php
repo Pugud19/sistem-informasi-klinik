@@ -5,21 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class MasaAktif extends Model
+class Obat extends Model
 {
     use HasFactory;
-    protected $table = 'masa_aktifs';
+    protected $table = 'obats';
 
     // protected $guarded = 'id';
     // protected $status_way = ['aktif', 'tidak_aktif'];
 
     protected $fillable =[
-        'user_id',
-        'internet_id',
-        'nama',
-        'awal_paket',
-        'akhir_paket',
-        'status',
+        'nama_obat',
+        'expired'
     ];
 
     public function user(){

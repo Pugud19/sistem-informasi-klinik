@@ -13,23 +13,19 @@ class Pengguna extends Model
     protected $guarded = 'id';
 
     protected $fillable = [
-        'costumer_id',
         'user_id',
-        'teknisi',
-        'paket',
         'nama',
-        'router',
-        'tempat',
-        'tagihan',
-        'status_tagihan',
+        'wilayah_id',
         'nomor_hp',
-        'keterangan',
     ];
 
     // public function internet(){
     //     return $this->belongsTo(Internet::class);
     // }
     public function userData(){
+        return $this->belongsTo(User::class, 'user_id');
+    }
+    public function wilayahData(){
         return $this->belongsTo(User::class, 'user_id');
     }
 }

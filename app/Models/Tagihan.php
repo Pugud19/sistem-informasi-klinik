@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Tagihan extends Model
 {
     use HasFactory;
+
+    protected $table = 'gajis';
+    protected $guarded = 'id';
+
+    protected $fillable = [
+        'nama',
+        'pemasangan',
+        'gaji_pokok',
+        'gaji_kehadiran',
+    ];
 }

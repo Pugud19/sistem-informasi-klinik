@@ -35,7 +35,7 @@
                 <a class="nav-link" href="{{ __('register')}}">Register</a>
             </li>
             @else
-            @if(Auth::user()->role == 'admin')
+            @if(Auth::user()->role == 'admin' || Auth::user()->role == 'pegawai')
             <li class="nav-item">
                 <a class="nav-link" href="{{ __('dashboard')}}">{{ __('Dashboard')}}</a>
             </li>

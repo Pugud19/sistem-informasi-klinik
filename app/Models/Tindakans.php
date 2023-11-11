@@ -5,14 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Todo extends Model
+class Tindakan extends Model
 {
     use HasFactory;
-    protected $table = 'todos';
+    protected $table = 'tindakans';
     protected $guarded = ['id'];
 
     protected $fillabe = [
-        'nama_pekerjaan',
+        'deskripsi_tindakan',
+        'obat_id',
         'tanggal',
     ];
 }
