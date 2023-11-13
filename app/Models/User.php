@@ -51,6 +51,12 @@ class User extends Authenticatable
     public function pengguna(){
         return $this->hasOne(Pengguna::class);
     }
+    // Dalam model User.php
+    public function tagihan()
+    {
+        return $this->hasMany(Tagihan::class);
+    }
+
     // public function masaAktif(){
     //     return $this->belongsTo(MasaAktif::class);
     // }

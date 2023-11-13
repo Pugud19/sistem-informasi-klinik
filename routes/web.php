@@ -6,6 +6,7 @@ use App\Http\Controllers\MasaAktifController;
 use App\Http\Controllers\ObatController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PenggunaController;
+use App\Http\Controllers\TagihanController;
 use App\Http\Controllers\TindakanController;
 use App\Http\Controllers\TodoController;
 use App\Http\Controllers\UserController;
@@ -44,7 +45,8 @@ Route::middleware(['access'])->group (function() {
     Route::get('/pengguna-delete/{id}', 'App\Http\Controllers\PenggunaController@destroy')->name("hapus");
     Route::resource('/dashboard/wilayah', WilayahController::class);
     Route::get('/wilayah-delete/{id}', 'App\Http\Controllers\WilayahController@destroy');
-    Route::view('/dashboard/pembayaran', 'admin.pembayaran.index');
+    Route::resource('/dashboard/tagihan', TagihanController::class);
+    Route::get('/tagihan-delete/{id}', 'App\Http\Controllers\TagihanController@destroy');
     Route::resource('/dashboard/obat', ObatController::class);
     Route::get('/obat-delete/{id}', 'App\Http\Controllers\ObatController@destroy');
     // Route::view('/dashboard/masa-aktif', 'admin.masa-aktif.index');
@@ -58,18 +60,19 @@ Route::middleware(['access'])->group (function() {
 
 // ========== Route For landing ==============
 Route::view('/', 'landing.home');
-// Route::view('/home', 'landing.home');
+Route::view('/home', 'landing.home');
 // Route::get('/', [InternetController::class, 'ambil'])->name('ambil');
 // Route::get('/home', [InternetController::class, 'ambil'])->name('ambil');
 // Route::get('/home', 'InternetController@ambil');
 Route::view('/about', 'landing.about');
 Route::view('/service', 'landing.service');
+Route::get('/tagihan', [TagihanController::class, 'tagihan'])->name('tagihan');
 
 // Route::view('/payment', 'payment.payment');
 Route::get('/payment-form', [PaymentController::class, 'index']);
 Route::get('/payment', [PaymentController::class, 'payment']);
 Route::post('/payment', [PaymentController::class, 'payment_post']);
-Route::get('/tagihan', [UserController::class, 'tagihan'])->name('tagihan');
+// Route::get('/tagihan', [UserController::class, 'tagihan'])->name('tagihan');
 // Route::get('/tagihans', [PenggunaController::class, 'tagihans']);
 
 

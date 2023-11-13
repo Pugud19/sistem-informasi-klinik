@@ -14,7 +14,7 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{ url('/dashboard/pengguna')}}">Data Pengguna</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url('/dashboard/pengguna')}}">Data Pasien</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{ url('/dashboard/wilayah')}}">Data Wilayah</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{ url('/dashboard/obat')}}">Data Obat</a></li>
               </ul>
@@ -23,15 +23,15 @@
           <li class="nav-item">
             <a class="nav-link" href="{{ url('/dashboard/tindakan')}}">
             <i class="fa fa-briefcase menu-icon" aria-hidden="true"></i>
-              <span class="menu-title">Paket Tindakan</span>
+              <span class="menu-title">Tindakan Pasien</span>
             </a>
           </li>
-          {{-- <li class="nav-item">
-            <a class="nav-link" href="{{ url('/dashboard/data')}}">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url('/dashboard/tagihan')}}">
             <i class="fa fa-ravelry menu-icon" aria-hidden="true"></i>
-              <span class="menu-title">Masa Aktif</span>
+              <span class="menu-title">Transaksi Tagihan</span>
             </a>
-          </li> --}}
+          </li>
           {{-- <li class="nav-item">
             <a class="nav-link" href="{{ url('/dashboard/todo')}}">
             <i class="icon-paper menu-icon" aria-hidden="true"></i>

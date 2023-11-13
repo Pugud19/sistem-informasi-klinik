@@ -9,13 +9,20 @@ class Tagihan extends Model
 {
     use HasFactory;
 
-    protected $table = 'gajis';
+    protected $table = 'tagihans';
     protected $guarded = 'id';
 
     protected $fillable = [
-        'nama',
-        'pemasangan',
-        'gaji_pokok',
-        'gaji_kehadiran',
+        'user_id',
+        'tindakan_id',
+        'total_biaya'
     ];
+
+
+    public function penggunaData(){
+        return $this->belongsTo(User::class, 'user_id');
+    }
+    public function tindakanData(){
+        return $this->belongsTo(Tindakan::class, 'tindakan_id');
+    }
 }

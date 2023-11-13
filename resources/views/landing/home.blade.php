@@ -10,7 +10,7 @@
               <img src="{{ asset('landing/img/services/service-1.svg')}}" alt="">
             </div>
             <div class="body">
-              <h5 class="text-secondary">Internet Consultancy</h5>
+              <h5 class="text-secondary">Docter Consultancy</h5>
               <p>Kami membantu kalian para pelanggan untuk berkonsultasi terkait layanan internet kami serta menjadi bantuan bagi anda yang mengalami masalah dalam layanan kami</p>
             </div>
           </div>

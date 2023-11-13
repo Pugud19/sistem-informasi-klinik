@@ -6,7 +6,7 @@
       <div class="card">
         <div class="card-body my-3">
             <div class="d-flex justify-content-between">
-                <p class="card-title">Data Pengguna Jasa</p>
+                <p class="card-title">Data Pasien</p>
                 <div class="d-flex justify-content-around">
                 {{-- search box --}}
                 <div>

@@ -1,7 +1,7 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky" data-offset="500">
       <div class="container">
-        <a href="#" class="navbar-brand">Amreta<span class="text-warning">Net</span></a>
+        <a href="#" class="navbar-brand">Kli<span class="text-warning">nik</span></a>
 
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -67,8 +67,8 @@
       <div class="page-banner home-banner">
         <div class="row align-items-center flex-wrap-reverse h-100">
           <div class="col-md-6 py-5 wow fadeInLeft">
-            <h1 class="mb-4">Mari Bergabung bersama Amreta!</h1>
-            <p class="text-lg text-grey mb-5">Amreta merupakan penyedia layanan internet yang ramah di kantong dan sangat cocok digunakan di era seperti ini.Bergabunglah untuk solusi internet anda yang sangat baik dan cepat</p>
+            <h1 class="mb-4">Mari Bergabung bersama Klinik Kami!</h1>
+            <p class="text-lg text-grey mb-5">Kami merupakan penyedia layanan Kesehatan yang ramah di kantong dan sangat cocok digunakan di era seperti ini.Bergabunglah untuk solusi kesehatan anda yang sangat baik dan cepat</p>
             <a href="#" class="btn btn-primary btn-split">Langganan <div class="fab"><i class="fa fa-wifi" aria-hidden="true"></i></div></a>
           </div>
           <div class="col-md-6 py-5 wow zoomIn">

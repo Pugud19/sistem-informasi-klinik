@@ -6,9 +6,9 @@
       <div class="card">
         <div class="card-body my-3">
             <div class="d-flex justify-content-between">
-                <p class="card-title">Data Karyawan</p>
+                <p class="card-title">Data Tagihan</p>
                 <div>
-                    <a href="{{ route('gaji.create')}}"  class="btn btn-primary mr-2 mb-3"><i class="fa fa-plus"></i> Tambah</a>
+                    <a href="{{ route('tagihan.create')}}"  class="btn btn-primary mr-2 mb-3"><i class="fa fa-plus"></i> Tambah</a>
                 </div>
             </div>
             <div class="col-md-12 col-lg-12">
@@ -17,25 +17,23 @@
                   <thead>
                     <tr>
                       <th>No</th>
-                      <th>Nama</th>
-                      <th>Pemasangan</th>
-                      <th>Gaji Pokok</th>
-                      <th>Gaji Kehadiran</th>
+                      <th>User_id</th>
+                      <th>Tindakan_id</th>
+                      <th>Total Biaya</th>
                       <th>Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach ($gaji as $g)
+                    @foreach ($tagihan as $tg)
                     <tr>
                       <td>{{ ++$no }}</td>
-                      <td>{{ $g->nama }}</td>
-                      <td>{{ $g->pemasangan }}</td>
-                      <td>{{ number_format($g->gaji_pokok) }}</td>
-                      <td>{{ number_format($g->gaji_kehadiran) }}</td>
+                      <td>{{ $tg->user_id }}</td>
+                      <td>{{ $tg->tindakan_id }}</td>
+                      <td>Rp.{{ number_format($tg->total_biaya) }}</td>
                       <td>
                         <span class="d-flex justify-content-center">
-                            <a href="{{ route('gaji.edit', $g->id)}}" class="btn btn-sm btn-warning mx-1" title="Ubah data"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
-                            <a href="/gaji-delete/{{$g->id}}" class="btn btn-sm btn-danger delete-confirm" title="Hapus data"><i class="fa fa-trash" aria-hidden="true"></i> Hapus</a>
+                            <a href="{{ route('tagihan.edit', $tg->id)}}" class="btn btn-sm btn-warning mx-1" title="Ubah data"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
+                            <a href="/tagihan-delete/{{$tg->id}}" class="btn btn-sm btn-danger delete-confirm" title="Hapus data"><i class="fa fa-trash" aria-hidden="true"></i> Hapus</a>
                         </span>
                       </td>
                           </tr>

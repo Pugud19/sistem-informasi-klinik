@@ -16,8 +16,14 @@ return new class extends Migration
         Schema::create('tagihans', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('tindakan_id');
             $table->string("total_biaya");
             $table->timestamps();
+
+            $table->foreign('tindakan_id')->references('id')->on('tindakans')
+            ->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')
+            ->onDelete('cascade');
         });
     }
 

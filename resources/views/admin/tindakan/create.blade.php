@@ -30,30 +30,30 @@
           </div>
         </div>
         <div class="form-group row">
-        <div class="col">
-            <label>Obat</label>
-            <div id="the-basics">
-                {{-- <input class="typeahead" type="text" name="status_tagihan"> --}}
-                <select name="obat_id" class="form-control">
-                  <option>== pilih Wilayah Id ==</option>
-                  @foreach ($obat as $ob)
-                  <option value="{{ $ob->id }}">{{ $ob->nama_obat }} </option>
-                  @endforeach
-                </select>
-              </div>
-        </div>
-        <div class="col">
-            <label>User Id</label>
-            <div id="the-basics">
-              {{-- <input class="typeahead" type="text" name="status_tagihan"> --}}
-              <select name="user_id" class="form-control">
-                <option>== pilih User Id ==</option>
-                @foreach ($user as $us)
-                <option value="{{ $us->id }}">{{ $us->name }} </option>
-                @endforeach
-              </select>
+            <div class="col">
+                <label>Obat</label>
+                <div id="the-basics">
+                    {{-- <input class="typeahead" type="text" name="status_tagihan"> --}}
+                    <select name="obat_id" class="form-control">
+                    <option>== pilih Wilayah Id ==</option>
+                    @foreach ($obat as $ob)
+                    <option value="{{ $ob->id }}">{{ $ob->nama_obat }} </option>
+                    @endforeach
+                    </select>
+                </div>
             </div>
-        </div>
+            <div class="col">
+                <label>User Id</label>
+                <div id="the-basics">
+                {{-- <input class="typeahead" type="text" name="status_tagihan"> --}}
+                <select name="user_id" class="form-control">
+                    <option>== pilih User Id ==</option>
+                    @foreach ($user as $us)
+                    <option value="{{ $us->id }}">{{ $us->name }} </option>
+                    @endforeach
+                </select>
+                </div>
+            </div>
         </div>
         <div class="form-group row">
             <div class="col">

@@ -19,33 +19,39 @@
         </div>
     @endif
 
-        <form action="{{ route('gaji.store')}}" method="post">
+        <form action="{{ route('tagihan.store')}}" method="post">
             @csrf
         <div class="form-group row">
-          <div class="col">
-            <label>Nama</label>
-            <div id="the-basics">
-              <input class="typeahead" type="text" name="nama">
+            <div class="col">
+                <label>Tindakan</label>
+                <div id="the-basics">
+                    {{-- <input class="typeahead" type="text" name="status_tagihan"> --}}
+                    <select name="tindakan_id" class="form-control">
+                      <option>== pilih Wilayah Id ==</option>
+                      @foreach ($tindakan as $td)
+                      <option value="{{ $td->id }}">{{ $td->deskripsi_tindakan}} & obat id =  {{ $td->obat_id  }} </option>
+                      @endforeach
+                    </select>
+                  </div>
             </div>
-          </div>
-          <div class="col">
-            <label>Pemasangan</label>
-            <div id="bloodhound">
-              <input class="typeahead" type="text" name="pemasangan">
+            <div class="col">
+                <label>User Id</label>
+                <div id="the-basics">
+                  {{-- <input class="typeahead" type="text" name="status_tagihan"> --}}
+                  <select name="user_id" class="form-control">
+                    <option>== pilih User Id ==</option>
+                    @foreach ($user as $us)
+                    <option value="{{ $us->id }}">{{ $us->name }} </option>
+                    @endforeach
+                  </select>
+                </div>
             </div>
-          </div>
         </div>
         <div class="form-group row">
             <div class="col">
-              <label>Gaji Pokok</label>
+              <label>Total Biaya</label>
               <div id="bloodhound">
-                <input class="typeahead" type="text" name="gaji_pokok">
-              </div>
-            </div>
-            <div class="col">
-              <label>Gaji Kehadiran</label>
-              <div id="bloodhound">
-                <input class="typeahead" type="text" name="gaji_kehadiran">
+                <input class="typeahead" type="number" name="total_biaya">
               </div>
             </div>
         </div>
