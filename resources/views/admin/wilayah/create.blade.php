@@ -4,9 +4,9 @@
 <div class="col-md-10 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title text-center">Form Internet</h4>
+                  <h4 class="card-title text-center">Form Wilayah</h4>
                   <p class="card-description text-center">
-                    Form untuk data internet
+                    Form untuk data Wilayah
                   </p>
 
                   @if ($errors->any())
@@ -20,33 +20,13 @@
                   </div>
               @endif
 
-                  <form action="{{ route('internet.store')}}" method="POST">
+                  <form action="{{ route('wilayah.store')}}" method="POST">
                     @csrf
                   <div class="form-group row">
                     <div class="col">
-                      <label>Paket</label>
+                      <label>Nama Wilayah</label>
                       <div id="the-basics">
-                        <input class="typeahead" type="text" name="paket" placeholder="Nama Paket">
-                      </div>
-                    </div>
-                    <div class="col">
-                      <label>Kecepatan</label>
-                      <div id="bloodhound">
-                        <input class="typeahead" type="text" name="kecepatan" placeholder="Kecepatan Internet">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="col">
-                      <label>Lama Penggunaan</label>
-                      <div id="the-basics">
-                        <input class="typeahead" type="text" name="lama_penggunaan" placeholder="Lama penggunaan">
-                      </div>
-                    </div>
-                    <div class="col">
-                      <label>Harga</label>
-                      <div id="bloodhound">
-                        <input class="typeahead" type="text" name="harga" placeholder="Harga">
+                        <input class="typeahead" type="text" name="nama_wilayah" placeholder="Masukkan Nama Wilayah">
                       </div>
                     </div>
                   </div>

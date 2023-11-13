@@ -15,7 +15,7 @@
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="{{ url('/dashboard/pengguna')}}">Data Pengguna</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{ url('/dashboard/gaji')}}">Data Karyawan</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url('/dashboard/wilayah')}}">Data Karyawan</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{ url('/dashboard/users')}}">Edit User</a></li>
               </ul>
             </div>

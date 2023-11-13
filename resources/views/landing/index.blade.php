@@ -8,7 +8,7 @@
 
   <meta name="copyright" content="MACode ID, https://macodeid.com/">
 
-  <title>AmretaNet.</title>
+  <title>Klinik.</title>
 
   <link rel="stylesheet" href="{{ asset('landing/css/maicons.css')}}">
 

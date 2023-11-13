@@ -7,8 +7,10 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\TodoController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\WilayahController;
 use App\Models\Pembayaran;
 use App\Models\Pengguna;
+use App\Models\Wilayah;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -37,14 +39,14 @@ Route::middleware(['access'])->group (function() {
     Route::get('/dashboard/penggunas', [PenggunaController::class, 'search'])->name('search');
 
     Route::get('/pengguna-delete/{id}', 'App\Http\Controllers\PenggunaController@destroy')->name("hapus");
-    Route::resource('/dashboard/internet', InternetController::class);
-    Route::get('/internet-delete/{id}', 'App\Http\Controllers\InternetController@destroy');
+    Route::resource('/dashboard/wilayah', WilayahController::class);
+    Route::get('/wilayah-delete/{id}', 'App\Http\Controllers\WilayahController@destroy');
     Route::view('/dashboard/pembayaran', 'admin.pembayaran.index');
     Route::resource('/dashboard/todo', TodoController::class);
     Route::get('/todo-delete/{id}', 'App\Http\Controllers\TodoController@destroy');
     // Route::view('/dashboard/masa-aktif', 'admin.masa-aktif.index');
-    Route::resource('/dashboard/gaji', GajiController::class);
-    Route::get('/gaji-delete/{id}', 'App\Http\Controllers\GajiController@destroy');
+    // Route::resource('/dashboard/gaji', WilayahController::class);
+    // Route::get('/gaji-delete/{id}', 'App\Http\Controllers\GajiController@destroy');
     Route::resource('/dashboard/users', UserController::class);
 
 
