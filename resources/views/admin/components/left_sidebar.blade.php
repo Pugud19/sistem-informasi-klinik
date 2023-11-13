@@ -15,15 +15,15 @@
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="{{ url('/dashboard/pengguna')}}">Data Pengguna</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{ url('/dashboard/wilayah')}}">Data Karyawan</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{ url('/dashboard/users')}}">Edit User</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url('/dashboard/wilayah')}}">Data Wilayah</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url('/dashboard/obat')}}">Data Obat</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('/dashboard/internet')}}">
+            <a class="nav-link" href="{{ url('/dashboard/tindakan')}}">
             <i class="fa fa-briefcase menu-icon" aria-hidden="true"></i>
-              <span class="menu-title">Paket Internet</span>
+              <span class="menu-title">Paket Tindakan</span>
             </a>
           </li>
           {{-- <li class="nav-item">
@@ -32,12 +32,12 @@
               <span class="menu-title">Masa Aktif</span>
             </a>
           </li> --}}
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a class="nav-link" href="{{ url('/dashboard/todo')}}">
             <i class="icon-paper menu-icon" aria-hidden="true"></i>
               <span class="menu-title">Daftar Kerjaan</span>
             </a>
-          </li>
+          </li> --}}
           {{-- <li class="nav-item">
             <a class="nav-link" href="{{ url('/dashboard/documentation')}}">
               <i class="icon-paper menu-icon"></i>

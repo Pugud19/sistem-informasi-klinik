@@ -10,7 +10,7 @@ class Obat extends Model
     use HasFactory;
     protected $table = 'obats';
 
-    // protected $guarded = 'id';
+    protected $guarded = 'id';
     // protected $status_way = ['aktif', 'tidak_aktif'];
 
     protected $fillable =[
@@ -21,7 +21,7 @@ class Obat extends Model
     public function user(){
         return $this->hasMany(User::class);
     }
-    public function internet(){
-        return $this->belongsTo(Internet::class);
+    public function tindakanData(){
+        return $this->belongsTo(Tindakan::class);
     }
 }

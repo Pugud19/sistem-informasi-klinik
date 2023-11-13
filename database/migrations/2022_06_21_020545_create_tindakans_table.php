@@ -15,12 +15,15 @@ return new class extends Migration
     {
         Schema::create('tindakans', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->string('deskripsi_tindakan');
             $table->unsignedBigInteger('obat_id');
             $table->dateTime('tanggal');
             $table->timestamps();
 
             $table->foreign('obat_id')->references('id')->on('obats')
+            ->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')
             ->onDelete('cascade');
         });
     }

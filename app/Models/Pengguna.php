@@ -26,6 +26,6 @@ class Pengguna extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
     public function wilayahData(){
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(Wilayah::class, 'wilayah_id');
     }
 }
