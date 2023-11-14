@@ -15,7 +15,7 @@ composer install
 npm install
 ```
 
-make your database in local, name your database `banksampah`
+make your database in local, name your database `klinik`
 import database in this repo to your sql database
 ,copy `.env.example` and rename to `.env` 
 
