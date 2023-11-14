@@ -6,7 +6,7 @@ Test Web Programmer Life Inovers
 ## set up this project
 - clone this project
 ```
-git clone git@github.com:Pugud19/banksampah.git
+git clone git@github.com:Pugud19/sistem-informasi-klinik.git
 ```
 
 - set up laravel
